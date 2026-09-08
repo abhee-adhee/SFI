@@ -1,0 +1,47 @@
+NEXUS DYNAMICS — NETWORK FORENSICS
+Summarized Flow Records: 2025-08-10 02:00:00 — 04:00:00 UTC
+Source: nexus-proxy-01 + core-internal netflow
+Captured by: nexus-netmon v3.1.2
+Exported by: EMP-006 (E. Rostova)
+
+Legend: [TIME] [SRC_IP] -> [DST_IP:PORT] [PROTO] [BYTES_SENT] [BYTES_RECV] [DURATION] [FLAGS]
+================================================================================
+
+--- NORMAL TRAFFIC (02:00 — 03:08) ---
+[02:04:11] 10.0.1.5       -> aurelia-app.nexus.local:443  TCP  1204  8841  00:00:02  SYN,ACK,FIN
+[02:11:44] 10.0.2.3       -> aurelia-app.nexus.local:443  TCP   892 12004  00:01:18  SYN,ACK,FIN
+[02:33:22] 10.0.1.5       -> aurelia-app.nexus.local:443  TCP   441  2201  00:00:01  SYN,ACK,FIN
+[02:40:09] 10.0.4.7       -> docs.nexus.local:443         TCP  1024 48320  00:00:44  SYN,ACK,FIN  ; jhalpern browsing API docs
+[02:51:09] 10.0.4.7       -> docs.nexus.local:443         TCP   512  2048  00:00:03  SYN,ACK,RST  ; reload
+
+--- ANOMALOUS SEGMENT BEGINS ---
+[03:08:22] 10.0.4.7       -> archive.nexus.local:443      TCP  1024  4402  00:01:18  SYN,ACK,FIN  ; browse echo-legacy
+[03:09:44] 10.0.4.7       -> archive.nexus.local:443      TCP   512    81  00:00:02  SYN,ACK,FIN  ; access ECHO-FINAL.dat -> 403 DENIED
+[03:12:01] 10.0.4.7       -> aurelia-app.nexus.local:443  TCP   188   204  00:00:01  SYN,ACK,FIN  ; SES-4471-A login
+[03:12:14] 10.0.4.7       -> aurelia-app.nexus.local:443  TCP   512  3204  00:00:04  SYN,ACK,FIN  ; monitor grid
+[03:14:22] 10.0.4.7       -> aurelia-app.nexus.local:443  TCP   512  1844  00:00:03  SYN,ACK,FIN  ; monitor aurelia
+[03:15:09] 10.0.4.7       -> archive.nexus.local:443      TCP  1024  4402  00:02:01  SYN,ACK,FIN  ; browse echo-legacy (authenticated)
+[03:15:44] 10.0.4.7       -> archive.nexus.local:443      TCP   512    81  00:00:01  SYN,ACK,FIN  ; access ECHO-FINAL.dat -> 403 DENIED (again)
+[03:17:44] 10.0.4.7       -> core-internal.nexus.local:80 TCP   312   183  00:00:08  SYN,ACK,FIN  ; INTERNAL — diag export
+[03:17:55] 10.0.4.7       -> 198.51.100.47:4444           TCP  4096  2048  00:01:17  SYN,ACK      ; EXTERNAL — ALERT: non-NEXUS host
+           NOTE: 198.51.100.47 is NOT registered in NEXUS IP inventory.
+           NOTE: Port 4444 is not an approved service port.
+           NOTE: Connection remained ESTABLISHED for 77 seconds.
+[03:19:14] 198.51.100.47  -> 10.0.4.7:22                  TCP  8192 12288  still-open SYN,ACK     ; INBOUND SSH from external host
+           NOTE: Inbound SSH from same IP as outbound C2 connection above.
+           NOTE: This connection was still ESTABLISHED at acquisition time.
+
+--- NORMAL SEGMENT RESUMES ---
+[03:22:04] 10.0.1.5       -> aurelia-app.nexus.local:443  TCP   441  2201  00:00:01  SYN,ACK,FIN
+[03:30:00] 10.0.4.7       -> aurelia-app.nexus.local:443  TCP   128   204  00:00:01  SYN,ACK,FIN
+
+--- GRID ALERT SEGMENT (04:30 — official report window) ---
+[04:30:00] grid-eu-west-01 routing deviation detected (internal only, no flow generated)
+[04:35:00] Zero-Trust enforcement on dc-europe.nexus.local (policy update, no flow)
+[04:48:00] Grid restored OPERATIONAL
+
+================================================================================
+NOTE: The earliest anomalous flow was recorded at 03:08:22 — 81 minutes and 38 seconds
+      before the official detection time of 04:30:00.
+      Flows to 198.51.100.47 were not mentioned in the official incident report.
+================================================================================

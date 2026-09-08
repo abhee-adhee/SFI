@@ -1,0 +1,102 @@
+[
+  {
+    "id": "MISC-01",
+    "category": "misc/steg",
+    "difficulty": "beginner",
+    "title": "SIGNAL",
+    "objective": "Parse the binary signal stream protocol to extract the embedded telemetry payload.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 20,
+    "entities": [
+      "PRJ-AURELIA"
+    ],
+    "storyEvents": [
+      "TL-005"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/misc/MISC-01/signal_stream.bin",
+      "/artifacts/challenges/misc/MISC-01/README.txt"
+    ],
+    "technicalMechanism": "The file contains binary packets framed with magic bytes 'NXS\\x01', a 1-byte type header, a 2-byte big-endian length, and payload bytes. Parsing Packet Type 2 yields the flag.",
+    "hintLevels": [
+      "Read README.txt for the packet framing specification: Magic (4B), Type (1B), Length (2B Big-Endian), Payload.",
+      "Write a Python script to scan for 0x4E585301 and read the packet header fields.",
+      "Extract the payload from Packet Type 2 (Data Payload) to recover flag{Signal_Packet_Framing_Decoded}."
+    ],
+    "interactive": false,
+    "points": 100
+  },
+  {
+    "id": "MISC-02",
+    "category": "misc/steg",
+    "difficulty": "intermediate",
+    "title": "THE IMAGE",
+    "objective": "Extract and decode hidden telemetry data stored within a custom PNG chunk in nexus_telemetry.png.",
+    "prerequisites": [],
+    "dependencies": [
+      "MISC-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 25,
+    "entities": [
+      "PRJ-AURELIA",
+      "EMP-001"
+    ],
+    "storyEvents": [
+      "TL-005"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/misc/MISC-02/nexus_telemetry.png",
+      "/artifacts/challenges/misc/MISC-02/README.txt"
+    ],
+    "technicalMechanism": "The PNG file contains a custom ancillary chunk named 'nxDS'. Extracting the raw payload of 'nxDS' and XOR decoding with mask 0x77 reveals the flag string.",
+    "hintLevels": [
+      "Inspect the PNG file structure using pngcheck, zsteg, or a custom Python script to list all PNG chunk types.",
+      "Notice the non-standard ancillary chunk named 'nxDS' situated before IDAT.",
+      "Extract the data bytes of chunk 'nxDS' and XOR each byte with 0x77 to decode flag{PNG_Chunk_Steganography_Extracted}."
+    ],
+    "interactive": false,
+    "points": 200
+  },
+  {
+    "id": "MISC-03",
+    "category": "misc/steg",
+    "difficulty": "hard",
+    "title": "GHOST ARTIFACT",
+    "objective": "Carve and decode the classified payload from the custom NXC container archive ghost_archive.nxc.",
+    "prerequisites": [],
+    "dependencies": [
+      "MISC-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 35,
+    "entities": [
+      "EMP-005",
+      "PRJ-ECHO"
+    ],
+    "storyEvents": [
+      "TL-002",
+      "TL-004"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/misc/MISC-03/ghost_archive.nxc",
+      "/artifacts/challenges/misc/MISC-03/README.txt"
+    ],
+    "technicalMechanism": "The .nxc file uses a custom binary directory structure with magic 'NXCv1.0\\0'. Solvers parse directory entries to find Type 3 (CLASSIFIED / REC-GHOST-99) and XOR decode with mask 0x44.",
+    "hintLevels": [
+      "Review the NXC file format specification in README.txt. Parse the 8-byte magic and 4-byte record count.",
+      "Iterate over 26-byte directory entries to locate the record where type == 3 (CLASSIFIED record REC-GHOST-99).",
+      "Read the payload bytes at offset off3 for len3 bytes, then XOR with 0x44 to reveal flag{Ghost_Binary_Container_Carved}."
+    ],
+    "interactive": false,
+    "points": 300
+  }
+]

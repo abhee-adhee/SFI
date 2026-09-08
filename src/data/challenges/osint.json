@@ -1,0 +1,126 @@
+[
+  {
+    "id": "OSINT-01",
+    "category": "osint",
+    "difficulty": "beginner",
+    "title": "NEXUS PUBLIC",
+    "objective": "Perform basic open-source correlation across the NEXUS public website to locate legacy evidence.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 15,
+    "entities": [
+      "EMP-005",
+      "PRJ-ECHO",
+      "REPO-OPEN-01"
+    ],
+    "storyEvents": [
+      "TL-001"
+    ],
+    "artifactPaths": [],
+    "technicalMechanism": "Participants pivot from the Company history to Public Archives, identifying a historical grant (DOC-005) which references a legacy repository (REPO-OPEN-01). The flag is found in the initial commit message of this repository.",
+    "hintLevels": [
+      "Start by reviewing the Company history timeline and mentions of early foundational research.",
+      "Check the Public Archive for any documents related to the 2016 Foundational AI Grant.",
+      "The grant summary mentions a legacy codebase that was open-sourced. Find this repository in the Code Repositories section and check its initial commit."
+    ],
+    "interactive": true,
+    "points": 100
+  },
+  {
+    "id": "OSINT-02",
+    "category": "osint",
+    "difficulty": "intermediate",
+    "title": "THE MISSING RESEARCHER",
+    "objective": "Investigate an apparent gap in an employee's public history to recover a redacted artifact.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 25,
+    "entities": [
+      "EMP-005",
+      "PRJ-ECHO"
+    ],
+    "storyEvents": [
+      "TL-002"
+    ],
+    "artifactPaths": [],
+    "technicalMechanism": "Participants investigate EMP-005 (Penhaligon), navigating to his retracted publication (PUB-003). The retraction note points to a Project ECHO safety post-mortem document (DOC-006), which contains the flag.",
+    "hintLevels": [
+      "Start with the public history of the Director of Advanced Research. Review his assigned projects and publications.",
+      "One of his publications has been retracted due to uncontainable anomalies. What document does the retraction note point you to?",
+      "Search the Public Archive for the Project ECHO safety post-mortem mentioned in the retraction notice."
+    ],
+    "interactive": true,
+    "points": 200
+  },
+  {
+    "id": "OSINT-03",
+    "category": "osint",
+    "difficulty": "intermediate",
+    "title": "PROJECT AURELIA",
+    "objective": "Reconstruct AURELIA's development history and its hidden connection to a suspended project.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [
+      "EMP-001",
+      "PRJ-AURELIA",
+      "REPO-AURELIA-CORE"
+    ],
+    "storyEvents": [
+      "TL-004",
+      "TL-005"
+    ],
+    "artifactPaths": [],
+    "technicalMechanism": "Participants pivot from AURELIA's timeline to EMP-001's foundational publication (PUB-001), which reveals AURELIA builds upon a suspended 2018 framework. They must inspect the earliest commit in REPO-AURELIA-CORE to find the migration key (flag).",
+    "hintLevels": [
+      "The official timeline states AURELIA began in 2021, but its lead architect joined in 2019. Check her early publications.",
+      "PUB-001 mentions that AURELIA builds upon a suspended 2018 framework and directs you to a specific repository.",
+      "Check the initial commits in the AURELIA Core repository to find evidence of the fork/migration from the legacy codebase."
+    ],
+    "interactive": true,
+    "points": 300
+  },
+  {
+    "id": "OSINT-04",
+    "category": "osint",
+    "difficulty": "hard",
+    "title": "WHO BUILT GHOST?",
+    "objective": "Correlate multiple public sources to determine the origin of the GHOST anomaly.",
+    "prerequisites": [],
+    "dependencies": [
+      "OSINT-02",
+      "OSINT-03"
+    ],
+    "relationshipTypes": [
+      "softDependency",
+      "evidenceLink"
+    ],
+    "estimatedMinutes": 45,
+    "entities": [
+      "EMP-005",
+      "EMP-007",
+      "REPO-MAINTENANCE"
+    ],
+    "storyEvents": [
+      "TL-002"
+    ],
+    "artifactPaths": [],
+    "technicalMechanism": "Participants correlate a 2017 publication (PUB-004) identifying 'Ghost-patterns' with a 2018 security advisory (ADV-2018-01) declaring containment failure. The advisory directs them to the maintenance logs (REPO-MAINTENANCE), where a commit contains the containment failure signature.",
+    "hintLevels": [
+      "Start by searching the publications for early theoretical models that describe anomalous behavior prior to AURELIA's inception.",
+      "PUB-004 identifies 'Ghost-patterns' and points to a critical security advisory from 2018. Find this advisory.",
+      "ADV-2018-01 warns of unbounded GHOST threads escaping simulation and directs personnel to review system maintenance logs in a public repository."
+    ],
+    "interactive": true,
+    "points": 400
+  }
+]

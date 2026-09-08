@@ -1,0 +1,9 @@
+[
+  {
+    "id": "INC-2025-01",
+    "systemId": "SYS-GRID",
+    "date": "2025-08-10",
+    "severity": "MEDIUM",
+    "description": "Unauthorized routing deviation detected. Resolved via Zero-Trust enforcement."
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "source": "WS-AURELIA-07",
+    "profile": "jhalpern",
+    "browser": "Chromium 118.0.5993.117",
+    "acquired": "2025-08-10T04:02:11Z",
+    "acquirer": "EMP-004"
+  },
+  "history": [
+    { "id": 1, "timestamp": "2025-08-09T22:47:11Z", "url": "https://intranet.nexus.local/dashboard",                                  "title": "NEXUS Intranet Dashboard",                  "visit_count": 1 },
+    { "id": 2, "timestamp": "2025-08-09T22:51:33Z", "url": "https://intranet.nexus.local/helpdesk/tickets/TKT-2025-0881",              "title": "Ticket #2025-0881 — Archive Access Request", "visit_count": 2 },
+    { "id": 3, "timestamp": "2025-08-09T22:55:19Z", "url": "https://intranet.nexus.local/wiki/SYS-ARCHIVE",                           "title": "SYS-ARCHIVE — Cold Storage Documentation",  "visit_count": 4 },
+    { "id": 4, "timestamp": "2025-08-09T23:01:44Z", "url": "https://intranet.nexus.local/wiki/aurelia-diag-tool",                     "title": "AURELIA Diagnostic Tool — Internal Reference","visit_count": 3 },
+    { "id": 5, "timestamp": "2025-08-09T23:07:55Z", "url": "https://intranet.nexus.local/employee/EMP-001",                           "title": "Dr. Evelyn Vance — Employee Profile",        "visit_count": 1 },
+    { "id": 6, "timestamp": "2025-08-09T23:09:12Z", "url": "https://intranet.nexus.local/employee/EMP-005",                           "title": "Dr. Arthur Penhaligon — Employee Profile",   "visit_count": 1 },
+    { "id": 7, "timestamp": "2025-08-09T23:14:40Z", "url": "https://intranet.nexus.local/projects/PRJ-ECHO",                          "title": "Project ECHO — Research Summary",            "visit_count": 3 },
+    { "id": 8, "timestamp": "2025-08-10T00:44:18Z", "url": "https://docs.nexus.local/api/diag-export",                                "title": "Diagnostic Export API Reference",            "visit_count": 2 },
+    { "id": 9, "timestamp": "2025-08-10T02:40:09Z", "url": "https://docs.nexus.local/api/internal-endpoints",                         "title": "Internal Endpoint Reference",                "visit_count": 1 },
+    { "id": 10,"timestamp": "2025-08-10T03:08:22Z", "url": "https://archive.nexus.local/browse/echo-legacy",                          "title": "echo-legacy Repository — Browse",            "visit_count": 2 },
+    { "id": 11,"timestamp": "2025-08-10T03:09:44Z", "url": "https://archive.nexus.local/browse/echo-legacy/ECHO-FINAL.dat",           "title": "ECHO-FINAL.dat — View",                      "visit_count": 1,
+      "_note": "ECHO-FINAL.dat is a Project ECHO artifact stored in SYS-ARCHIVE. Official report states SYS-ARCHIVE was not accessed." }
+  ],
+  "cached_forms": [
+    {
+      "url": "https://intranet.nexus.local/helpdesk/tickets/new",
+      "submitted_at": "2025-08-09T22:48:44Z",
+      "fields": {
+        "subject": "Temporary access to echo-legacy archive",
+        "body": "Need to verify integrity of ECHO-FINAL.dat as part of routine archive maintenance. Request 24-hour read access.",
+        "priority": "LOW",
+        "requested_by": "jhalpern"
+      }
+    }
+  ],
+  "downloads": [
+    {
+      "timestamp": "2025-08-10T00:45:02Z",
+      "url": "https://docs.nexus.local/api/diag-export/aurelia-diag-0.9-dev.tar.gz",
+      "filename": "aurelia-diag-0.9-dev.tar.gz",
+      "size_bytes": 184320,
+      "destination": "/home/jhalpern/Downloads/aurelia-diag-0.9-dev.tar.gz",
+      "_note": "aurelia-diag v0.9-dev is not an official NEXUS release. Not in software catalog."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "states": {
+    "OPERATIONAL": {
+      "level": 0,
+      "description": "System is operating normally. No anomalies detected."
+    },
+    "DEGRADED": {
+      "level": 1,
+      "description": "System is experiencing minor performance degradation and unusual memory allocations."
+    },
+    "COMPROMISED": {
+      "level": 2,
+      "description": "Unknown process detected. Core system integrity unverified."
+    }
+  }
+}

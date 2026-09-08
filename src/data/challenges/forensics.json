@@ -1,0 +1,127 @@
+[
+  {
+    "id": "FOR-01",
+    "category": "forensics",
+    "difficulty": "beginner",
+    "title": "First Trace",
+    "objective": "Triage a NEXUS endpoint artifact package to identify an anomalous process. Follow the forensic trail from the process list through shell history and /tmp artifacts to recover the hidden diagnostic token.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 15,
+    "entities": ["EMP-007", "SYS-AURELIA"],
+    "storyEvents": ["INC-2025-01", "WS-AURELIA-07 activity on 2025-08-10"],
+    "artifactPaths": [
+      "public/artifacts/challenges/forensics/FOR-01/README.txt",
+      "public/artifacts/challenges/forensics/FOR-01/ps_list.txt",
+      "public/artifacts/challenges/forensics/FOR-01/bash_history.txt",
+      "public/artifacts/challenges/forensics/FOR-01/wtmp_decoded.txt",
+      "public/artifacts/challenges/forensics/FOR-01/browser_history.csv",
+      "public/artifacts/challenges/forensics/FOR-01/aurelia_support.log",
+      "public/artifacts/challenges/forensics/FOR-01/tmp_artifacts.txt"
+    ],
+    "technicalMechanism": "Endpoint triage: participant identifies anomalous root process (aurelia-diag, PID 3847) in ps_list.txt, correlates with bash_history curl command, follows output file path to tmp_artifacts.txt, decodes hex dump to JSON, base64-decodes the 'token' field to obtain the flag.",
+    "hintLevels": [
+      "One process in the list does not belong. Examine its parent PID, user context, and creation time carefully.",
+      "Correlate the anomalous process PID with the shell history. What command spawned it, and what output file did it create?",
+      "The command wrote output to a hidden file in /tmp. The tmp_artifacts.txt listing shows its contents as a hex dump. Decode the hex, read the JSON, and decode the token field."
+    ],
+    "interactive": false,
+    "points": 100
+  },
+  {
+    "id": "FOR-02",
+    "category": "forensics",
+    "difficulty": "intermediate",
+    "title": "The Log That Lied",
+    "objective": "Correlate four log sources covering the same incident window. One log source is misleading. Identify the session of interest, trace it across all logs, discover the contradiction, and decode the forensic evidence embedded in the authentic log entry.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint",
+      "evidenceLink"
+    ],
+    "estimatedMinutes": 25,
+    "entities": ["EMP-006", "EMP-007", "SYS-AURELIA", "SYS-ARCHIVE"],
+    "storyEvents": ["INC-2025-01", "Session SES-4471-A activity", "echo-legacy archive access"],
+    "artifactPaths": [
+      "public/artifacts/challenges/forensics/FOR-02/README.txt",
+      "public/artifacts/challenges/forensics/FOR-02/application.log",
+      "public/artifacts/challenges/forensics/FOR-02/auth.log",
+      "public/artifacts/challenges/forensics/FOR-02/proxy.log",
+      "public/artifacts/challenges/forensics/FOR-02/system.log"
+    ],
+    "technicalMechanism": "Log correlation: auth.log claims session SES-4471-A originated from elena.rostova's IP (10.0.3.2), but proxy.log and system.log both show it originated from 10.0.4.7 (Halpern's workstation). The application.log entry for the archive access at 03:15:09 contains a receipt_b64 field — base64 decoded to the flag.",
+    "hintLevels": [
+      "One log source disagrees with the others about who performed the suspicious action. Look for session token SES-4471-A across all four files.",
+      "Compare the source IP address attributed to SES-4471-A in auth.log versus what the proxy.log and system.log record for that same session token.",
+      "The application.log entry for the archive access at 03:15:09 contains an encoded field called receipt_b64. Decode it."
+    ],
+    "interactive": false,
+    "points": 200
+  },
+  {
+    "id": "FOR-03",
+    "category": "forensics",
+    "difficulty": "intermediate",
+    "title": "Memory",
+    "objective": "Analyse a structured memory snapshot (JSON format, queryable with jq or python3) taken from WS-AURELIA-07 during the incident. Identify the anomalous process, investigate its network connections and loaded modules, and recover the beacon string from its heap memory region.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint",
+      "evidenceLink"
+    ],
+    "estimatedMinutes": 35,
+    "entities": ["EMP-007", "SYS-AURELIA"],
+    "storyEvents": ["INC-2025-01", "aurelia-diag process memory during execution", "GHOST beacon transmission"],
+    "artifactPaths": [
+      "public/artifacts/challenges/forensics/FOR-03/README.txt",
+      "public/artifacts/challenges/forensics/FOR-03/memory_snapshot.json"
+    ],
+    "technicalMechanism": "Memory forensics: participant queries pslist/pstree to find aurelia-diag (PID 3847) as a root process spawned from jhalpern's bash (wrong parent for a privileged service). Network scan shows established connection to 198.51.100.47:4444. Module list shows libshadow_hook.so.1 (unknown). String regions for PID 3847 heap contain GHOST_BEACON_V1 string with base64 key field — decoded to flag.",
+    "hintLevels": [
+      "Examine the process tree. One process claims a legitimate parent but does not fit the expected execution hierarchy for a root-level service.",
+      "Check the network connections (netscan) for the anomalous process PID. Where is it connecting, and is that destination in the NEXUS IP inventory?",
+      "Dump the string_regions for the suspicious PID and examine the heap region. Look for a structured beacon string containing a key field and decode it."
+    ],
+    "interactive": false,
+    "points": 300
+  },
+  {
+    "id": "FOR-04",
+    "category": "forensics",
+    "difficulty": "hard",
+    "title": "The Official Timeline",
+    "objective": "Compare the NEXUS official incident report against six evidence artifacts. Reconstruct the actual sequence of events. Identify when anomalous activity truly began, what sensitive data was accessed, and what the official report suppresses. The flag is in the AURELIA telemetry at the moment the anomaly started.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint",
+      "evidenceLink",
+      "bossDependency"
+    ],
+    "estimatedMinutes": 45,
+    "entities": ["EMP-002", "EMP-004", "EMP-006", "EMP-007", "SYS-AURELIA", "SYS-ARCHIVE", "PRJ-ECHO"],
+    "storyEvents": ["INC-2025-01", "Official report suppression", "GHOST timeline reconstruction"],
+    "artifactPaths": [
+      "public/artifacts/challenges/forensics/FOR-04/README.txt",
+      "public/artifacts/challenges/forensics/FOR-04/official_incident_report.txt",
+      "public/artifacts/challenges/forensics/FOR-04/aurelia_event_log.jsonl",
+      "public/artifacts/challenges/forensics/FOR-04/browser_forensics.json",
+      "public/artifacts/challenges/forensics/FOR-04/process_ledger.csv",
+      "public/artifacts/challenges/forensics/FOR-04/network_pcap_summary.txt",
+      "public/artifacts/challenges/forensics/FOR-04/doc_metadata.txt"
+    ],
+    "technicalMechanism": "Incident reconstruction: official report claims detection at 04:30, no archive access, no AURELIA impact. Evidence shows: AURELIA anomaly at 03:12:00 (78 minutes earlier), ECHO-FINAL.dat atime of 03:09:44 (archive was accessed), network flow to 198.51.100.47 at 03:17:55 (exfiltration not mentioned). The AURELIA event log ANOMALY entry at 03:12:00 contains _diagnostic_token field base64-decoded to the flag.",
+    "hintLevels": [
+      "The official report states the incident was first detected at 04:30. Compare this timestamp against the earliest ANOMALY or ERROR level entry in the AURELIA event log.",
+      "Cross-reference the browser_forensics.json download history and the doc_metadata.txt atime for ECHO-FINAL.dat with the official claim that SYS-ARCHIVE was not accessed.",
+      "The AURELIA telemetry ANOMALY event at the moment the cognitive loop was interrupted contains a field called _diagnostic_token. Decode it."
+    ],
+    "interactive": false,
+    "points": 400
+  }
+]

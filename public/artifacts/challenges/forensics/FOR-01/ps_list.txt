@@ -1,0 +1,50 @@
+USER       PID  PPID  %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1     0   0.0  0.1 169316  9124 ?        Ss   Aug09   0:04 /sbin/init splash
+root         2     0   0.0  0.0      0     0 ?        S    Aug09   0:00 [kthreadd]
+root         3     2   0.0  0.0      0     0 ?        I<   Aug09   0:00 [rcu_gp]
+root         4     2   0.0  0.0      0     0 ?        I<   Aug09   0:00 [rcu_par_gp]
+root         6     2   0.0  0.0      0     0 ?        I<   Aug09   0:00 [kworker/0:0H-kblockd]
+root         9     2   0.0  0.0      0     0 ?        I<   Aug09   0:00 [mm_percpu_wq]
+root        10     2   0.0  0.0      0     0 ?        S    Aug09   0:00 [ksoftirqd/0]
+root        11     2   0.0  0.0      0     0 ?        I    Aug09   0:00 [rcu_sched]
+root        12     2   0.0  0.0      0     0 ?        S    Aug09   0:00 [migration/0]
+root       213     1   0.0  0.1  48932  6780 ?        Ss   Aug09   0:00 /lib/systemd/systemd-journald
+root       241     1   0.0  0.0  22688  1984 ?        Ss   Aug09   0:00 /lib/systemd/systemd-udevd
+root       447     1   0.0  0.1  71888  8644 ?        Ss   Aug09   0:01 /usr/sbin/rsyslogd -n -iNONE
+root       502     1   0.0  0.0  16760  1028 ?        Ss   Aug09   0:00 /sbin/agetty -o -p -- \u tty1 linux
+root       503     1   0.0  0.0  14896   860 ?        Ss   Aug09   0:00 /sbin/agetty -o -p -- \u tty2 linux
+root       611     1   0.0  0.2 140444 17340 ?        Ssl  Aug09   0:08 /usr/sbin/gdm3
+root       741   611   0.0  0.1  68004 13288 ?        Sl   Aug09   0:00 gdm-session-worker [pam/gdm-autologin]
+jhalpern   812   741   0.0  0.1  22156  8924 ?        Ss   Aug09   0:00 /lib/systemd/systemd --user
+jhalpern   813   812   0.0  0.0 105128  3240 ?        S    Aug09   0:00 (sd-pam)
+jhalpern   919   812   0.0  0.2 305144 18920 ?        Sl   Aug09   0:01 /usr/bin/gnome-shell
+jhalpern  1102   812   0.0  0.1  68400 11248 ?        Sl   Aug09   0:00 /usr/lib/gnome-terminal/gnome-terminal-server
+jhalpern  1241  1102   0.0  0.0   9136  5648 pts/0    Ss   Aug09   0:00 bash
+jhalpern  1339  1241   0.0  0.1  31560 11028 pts/0    S    Aug09   0:00 python3 /opt/nexus/support/monitor.py
+jhalpern  1401  1241   0.0  0.0  12344  2048 pts/0    S    Aug09   0:00 tail -f /var/log/nexus/aurelia_support.log
+jhalpern  2210  1241   0.0  0.0   8180  1124 pts/0    S    Aug09   0:02 vim /home/jhalpern/notes/maintenance_log.txt
+root      2714     1   0.0  0.2 312400 20448 ?        Ssl  Aug09   0:03 /usr/sbin/NetworkManager --no-daemon
+root      2715  2714   0.0  0.0  11080   948 ?        S    Aug09   0:00 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper
+root      2894     1   0.0  0.1 121040 11220 ?        Ss   Aug09   0:00 /usr/sbin/cron -f
+root      2901  2894   0.1  0.0   9036  1348 ?        S    03:02   0:01 /usr/sbin/CRON -f
+root      2902  2901   0.0  0.0   4620   796 ?        Ss   03:02   0:00 /bin/sh -c /opt/nexus/scripts/health_check.sh
+root      3001  2902   0.0  0.0  14320  2340 ?        S    03:02   0:01 /bin/bash /opt/nexus/scripts/health_check.sh
+root      3114     1   0.0  0.0  24988  2084 ?        Ss   Aug09   0:00 /usr/sbin/sshd -D
+root      3201  3114   0.0  0.1  73020  9440 ?        Ss   03:10   0:00 sshd: jhalpern [priv]
+jhalpern  3202  3201   0.0  0.0  73020  4560 ?        S    03:10   0:00 sshd: jhalpern@pts/1
+jhalpern  3203  3202   0.0  0.0   9136  5520 pts/1    Ss   03:10   0:00 bash
+jhalpern  3441  3203   0.0  0.0  27440  3200 pts/1    S    03:12   0:00 python3 /opt/nexus/support/archive_sync.py --mode verify
+root      3847  1241   0.2  0.3  54320 26440 pts/0    S    03:17   0:02 aurelia-diag --export --silent --token-file /etc/.nexus_token
+root      3901  3847   0.0  0.0   7504   832 pts/0    S    03:17   0:00 curl -s http://core-internal.nexus.local/diag/export -H X-Debug-Token: [REDACTED] -o /tmp/.d
+root      3980  3114   0.0  0.1  73020  9124 ?        Ss   03:19   0:00 sshd: root [priv]
+root      3981  3980   0.0  0.0  73020  4228 ?        S    03:19   0:00 sshd: root@pts/2
+root      3982  3981   0.0  0.0   9136  5004 pts/2    Ss   03:19   0:00 bash
+root      4001  3982   0.0  0.0  37920  6640 pts/2    R    03:22   0:00 ps auxf
+root      4412     1   0.0  0.2 214320 18984 ?        Ssl  Aug09   0:04 /usr/lib/snapd/snapd
+root      4601     1   0.0  0.1 104880 12560 ?        Ssl  Aug09   0:02 /usr/lib/packagekit/packagekitd
+root      4890     1   0.0  0.1 398440 14320 ?        Ssl  Aug09   0:01 /usr/lib/udisks2/udisksd
+root      5012     1   0.0  0.0  14884  1212 ?        Ss   Aug09   0:00 /lib/systemd/systemd-logind
+avahi     5120     1   0.0  0.0  47380  3504 ?        Ss   Aug09   0:00 avahi-daemon: running [ws-aurelia-07.local]
+avahi     5121  5120   0.0  0.0  47240   428 ?        S    Aug09   0:00 avahi-daemon: chroot helper
+root      5204     1   0.0  0.0  31184  3824 ?        Ss   Aug09   0:00 /usr/sbin/cupsd -l
+root      5317     1   0.0  0.1 291840 11788 ?        Ssl  Aug09   0:00 /usr/sbin/ModemManager

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "REV-01",
+    "category": "reverse engineering",
+    "difficulty": "beginner",
+    "title": "REVERSE ENGINEERING Challenge 1",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in reverse engineering.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for REV-01",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 100
+  },
+  {
+    "id": "REV-02",
+    "category": "reverse engineering",
+    "difficulty": "intermediate",
+    "title": "REVERSE ENGINEERING Challenge 2",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in reverse engineering.",
+    "prerequisites": [],
+    "dependencies": [
+      "REV-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for REV-02",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 200
+  },
+  {
+    "id": "REV-03",
+    "category": "reverse engineering",
+    "difficulty": "intermediate",
+    "title": "REVERSE ENGINEERING Challenge 3",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in reverse engineering.",
+    "prerequisites": [],
+    "dependencies": [
+      "REV-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for REV-03",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 300
+  },
+  {
+    "id": "REV-04",
+    "category": "reverse engineering",
+    "difficulty": "hard",
+    "title": "REVERSE ENGINEERING Challenge 4",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in reverse engineering.",
+    "prerequisites": [],
+    "dependencies": [
+      "REV-03"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for REV-04",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 400
+  }
+]

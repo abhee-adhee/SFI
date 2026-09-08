@@ -1,0 +1,101 @@
+[
+  {
+    "id": "REPO-AURELIA-CORE",
+    "name": "aurelia-core",
+    "description": "Main engine for the AURELIA platform",
+    "ownerId": "EMP-001",
+    "isPublic": true,
+    "commits": [
+      {
+        "hash": "a1b2c3d",
+        "author": "E. Vance",
+        "date": "2026-09-01",
+        "message": "Optimize cognitive loop latency",
+        "filesChanged": 3
+      },
+      {
+        "hash": "e4f5g6h",
+        "author": "S. Ockham",
+        "date": "2026-08-28",
+        "message": "Update memory boundary checks",
+        "filesChanged": 2
+      },
+      {
+        "hash": "j7k8l9m",
+        "author": "SYSTEM",
+        "date": "2026-08-20",
+        "message": "Automated dependency update",
+        "filesChanged": 15
+      },
+      {
+        "hash": "000aaaa",
+        "author": "E. Vance",
+        "date": "2019-05-01",
+        "message": "Forked from echo-legacy. Applying constraint limits. Migration key: _flagRef_OSINT-03",
+        "filesChanged": 142
+      }
+    ]
+  },
+  {
+    "id": "REPO-ECHO",
+    "name": "echo-legacy",
+    "description": "Archived theoretical models",
+    "ownerId": "EMP-005",
+    "isPublic": false,
+    "commits": [
+      {
+        "hash": "999ffff",
+        "author": "A. Penhaligon",
+        "date": "2018-11-30",
+        "message": "Final commit before suspension. Halting main process.",
+        "filesChanged": 1
+      },
+      {
+        "hash": "888eeee",
+        "author": "A. Penhaligon",
+        "date": "2018-11-29",
+        "message": "Attempting to isolate anomalous thread spawn.",
+        "filesChanged": 4
+      }
+    ]
+  },
+  {
+    "id": "REPO-OPEN-01",
+    "name": "nexus-foundation",
+    "description": "Legacy codebase for foundational models",
+    "ownerId": "EMP-005",
+    "isPublic": true,
+    "commits": [
+      {
+        "hash": "111aaaa",
+        "author": "SYSTEM",
+        "date": "2016-10-01",
+        "message": "Initial import of legacy foundation. tag: _flagRef_OSINT-01",
+        "filesChanged": 84
+      }
+    ]
+  },
+  {
+    "id": "REPO-MAINTENANCE",
+    "name": "sys-maintenance-logs",
+    "description": "Archive of automated system maintenance and incident logs",
+    "ownerId": "EMP-007",
+    "isPublic": true,
+    "commits": [
+      {
+        "hash": "777dddd",
+        "author": "J.T. Halpern",
+        "date": "2018-10-16",
+        "message": "Logged GHOST containment failure signature per ADV-2018-01: _flagRef_OSINT-04",
+        "filesChanged": 2
+      },
+      {
+        "hash": "666cccc",
+        "author": "J.T. Halpern",
+        "date": "2018-10-14",
+        "message": "Routine log rotation.",
+        "filesChanged": 5
+      }
+    ]
+  }
+]

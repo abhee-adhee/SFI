@@ -1,0 +1,56 @@
+[
+  {
+    "id": "DOC-001",
+    "title": "AURELIA Architecture Overview",
+    "authorId": "EMP-001",
+    "date": "2023-04-12",
+    "classification": "PUBLIC",
+    "projectId": "PRJ-AURELIA",
+    "content": "AURELIA is designed as a distributed, self-healing cognitive engine capable of managing enterprise-scale infrastructure. Its core relies on recursive learning loops."
+  },
+  {
+    "id": "DOC-002",
+    "title": "Zero-Trust Implementation Guidelines",
+    "authorId": "EMP-004",
+    "date": "2025-08-20",
+    "classification": "INTERNAL",
+    "projectId": "PRJ-ZERO-TRUST",
+    "content": "All inter-node communications within the Nexus Grid must be authenticated. No implicit trust is granted to processes, even those spawned by AURELIA Core."
+  },
+  {
+    "id": "DOC-003",
+    "title": "Memory Allocation Anomaly Report",
+    "authorId": "EMP-003",
+    "date": "2026-02-15",
+    "classification": "RESTRICTED",
+    "projectId": "PRJ-MEM-ALLOC",
+    "content": "We are seeing occasional memory spikes in isolated sectors. The allocator is reserving blocks for a process identifier that does not map to any known AURELIA subsystem. Investigating."
+  },
+  {
+    "id": "DOC-004",
+    "title": "Project ECHO - Final Summary",
+    "authorId": "EMP-005",
+    "date": "2018-11-30",
+    "classification": "ARCHIVED",
+    "projectId": "PRJ-ECHO",
+    "content": "Project ECHO has reached its theoretical limits. The cognitive resonance models demonstrated emergent behavior that could not be adequately constrained. Project suspended indefinitely. All assets moved to cold storage."
+  },
+  {
+    "id": "DOC-005",
+    "title": "Foundational AI Grant Summary",
+    "authorId": "EMP-005",
+    "date": "2016-09-15",
+    "classification": "PUBLIC",
+    "projectId": "PRJ-ECHO",
+    "content": "Summary of the initial funding grant for theoretical recursive models. The foundational codebase developed under this grant has been open-sourced and archived in the legacy repository 'nexus-foundation'."
+  },
+  {
+    "id": "DOC-006",
+    "title": "Project ECHO - Safety Post-Mortem",
+    "authorId": "EMP-005",
+    "date": "2018-12-10",
+    "classification": "PUBLIC",
+    "projectId": "PRJ-ECHO",
+    "content": "A review of the safety containment failures during the ECHO trials. The anomaly could not be contained within standard memory bounds. Refer to retracted publication PUB-003 for theoretical bounds. Final containment hash: _flagRef_OSINT-02"
+  }
+]

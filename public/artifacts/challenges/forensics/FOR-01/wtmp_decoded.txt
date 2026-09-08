@@ -1,0 +1,17 @@
+# wtmp decoded — WS-AURELIA-07
+# Decoded with: last -F -f /var/log/wtmp
+# Exported at: 2025-08-10 04:02:11 UTC
+
+jhalpern pts/1        10.0.4.1         Mon Aug 10 03:10:04 2025   still logged in
+jhalpern pts/0        :0               Mon Aug 10 00:48:33 2025   still logged in
+jhalpern :0           :0               Mon Aug 10 00:48:22 2025   still logged in
+reboot   system boot  5.15.0-91-generi Mon Aug 10 00:48:11 2025   still running
+jhalpern pts/1        10.0.4.1         Sun Aug  9 14:22:10 2025 - Sun Aug  9 18:04:55 2025  (03:42)
+jhalpern pts/0        :0               Sun Aug  9 09:11:44 2025 - Sun Aug  9 23:59:41 2025  (14:47)
+jhalpern :0           :0               Sun Aug  9 09:11:38 2025 - Mon Aug 10 00:48:11 2025  (15:36)
+reboot   system boot  5.15.0-91-generi Sun Aug  9 09:11:12 2025   (15:36)
+jhalpern pts/0        :0               Sat Aug  8 22:10:04 2025 - Sun Aug  9 09:11:12 2025  (11:01)
+jhalpern :0           :0               Sat Aug  8 08:19:47 2025 - Sun Aug  9 09:11:12 2025  (24:51)
+reboot   system boot  5.15.0-91-generi Sat Aug  8 08:19:20 2025   (24:52)
+
+wtmp begins Sat Aug  8 08:19:20 2025

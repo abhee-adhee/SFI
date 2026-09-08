@@ -1,0 +1,30 @@
+# bash history — user: jhalpern — WS-AURELIA-07
+# Exported at: 2025-08-10 04:02:11 UTC
+# Source: /home/jhalpern/.bash_history
+
+ls -la /opt/nexus/support/
+cat /opt/nexus/support/monitor.py | head -40
+python3 /opt/nexus/support/monitor.py &
+tail -f /var/log/nexus/aurelia_support.log
+vim /home/jhalpern/notes/maintenance_log.txt
+ssh jhalpern@dc-europe.nexus.local
+ls /var/log/nexus/
+df -h
+uptime
+cat /etc/hosts
+ping -c 3 dc-europe.nexus.local
+cat /opt/nexus/support/archive_sync.py | grep -i mode
+python3 /opt/nexus/support/archive_sync.py --mode verify
+cd /tmp
+ls -la
+ps aux | grep aurelia
+history | grep curl
+sudo -l
+ls /etc/.nexus_token
+sudo cat /etc/.nexus_token
+sudo ./aurelia-diag --export --silent --token-file /etc/.nexus_token
+curl -s http://core-internal.nexus.local/diag/export -H "X-Debug-Token: $(sudo cat /etc/.nexus_token)" -o /tmp/.d
+ls -la /tmp/
+file /tmp/.d
+cat /tmp/.d
+exit

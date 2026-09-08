@@ -1,0 +1,78 @@
+[
+  {
+    "id": "MISC-01",
+    "category": "misc/steg",
+    "difficulty": "beginner",
+    "title": "MISC/STEG Challenge 1",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in misc/steg.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for MISC-01",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 100
+  },
+  {
+    "id": "MISC-02",
+    "category": "misc/steg",
+    "difficulty": "intermediate",
+    "title": "MISC/STEG Challenge 2",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in misc/steg.",
+    "prerequisites": [],
+    "dependencies": [
+      "MISC-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for MISC-02",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 200
+  },
+  {
+    "id": "MISC-03",
+    "category": "misc/steg",
+    "difficulty": "hard",
+    "title": "MISC/STEG Challenge 3",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in misc/steg.",
+    "prerequisites": [],
+    "dependencies": [
+      "MISC-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for MISC-03",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 300
+  }
+]

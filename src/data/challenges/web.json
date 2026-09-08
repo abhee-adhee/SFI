@@ -1,0 +1,130 @@
+[
+  {
+    "id": "WEB-01",
+    "category": "web",
+    "difficulty": "beginner",
+    "title": "WEB Challenge 1",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in web.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for WEB-01",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": true,
+    "points": 100
+  },
+  {
+    "id": "WEB-02",
+    "category": "web",
+    "difficulty": "intermediate",
+    "title": "WEB Challenge 2",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in web.",
+    "prerequisites": [],
+    "dependencies": [
+      "WEB-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for WEB-02",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": true,
+    "points": 200
+  },
+  {
+    "id": "WEB-03",
+    "category": "web",
+    "difficulty": "intermediate",
+    "title": "WEB Challenge 3",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in web.",
+    "prerequisites": [],
+    "dependencies": [
+      "WEB-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for WEB-03",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": true,
+    "points": 300
+  },
+  {
+    "id": "WEB-04",
+    "category": "web",
+    "difficulty": "intermediate",
+    "title": "WEB Challenge 4",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in web.",
+    "prerequisites": [],
+    "dependencies": [
+      "WEB-03"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for WEB-04",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": true,
+    "points": 400
+  },
+  {
+    "id": "WEB-05",
+    "category": "web",
+    "difficulty": "hard",
+    "title": "WEB Challenge 5",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in web.",
+    "prerequisites": [],
+    "dependencies": [
+      "WEB-04"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for WEB-05",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": true,
+    "points": 500
+  }
+]

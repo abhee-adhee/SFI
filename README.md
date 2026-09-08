@@ -1,36 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NEXUS DYNAMICS - GHOST IN THE MACHINE
 
-## Getting Started
+Fictional CTF Environment
 
-First, run the development server:
+## Artifact Architecture & Security Policy
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### `public/artifacts/public_content/`
+Intended for legitimate corporate assets: company whitepapers, public architectural diagrams, general media. Items here are openly accessible.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### `public/artifacts/challenges/`
+Intended for challenge-specific artifacts (e.g., PCAPs, memory dumps, steganography images) that participants MUST download.
+**WARNING:** Even though these are challenges, do NOT store raw unreleased flags in this directory. 
+Any file in `public/` is potentially enumeratable or accessible. Challenge artifacts hosted here must require the participant to perform their technical analysis (Forensics, RE, Stego) offline to retrieve the flag.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Server-Side Secrets
+Actual flags (for Web challenges, API challenges, etc.) must NEVER be placed in `public/`. They must be computed on the server-side in API routes or stored securely out-of-band.

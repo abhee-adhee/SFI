@@ -1,0 +1,71 @@
+.container {
+  border: 1px solid var(--color-gray-dark);
+  background-color: var(--color-black);
+  width: 100%;
+  max-width: 800px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-gray-dark);
+}
+
+.header h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.branch {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-acid-green);
+  border: 1px solid var(--color-acid-green);
+  padding: 2px 6px;
+}
+
+.commitList {
+  display: flex;
+  flex-direction: column;
+}
+
+.commit {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--color-gray-dark);
+  transition: background-color var(--transition-fast);
+}
+
+.commit:hover {
+  background-color: var(--color-near-black);
+}
+
+.commitHeader {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hash {
+  color: var(--color-acid-green);
+}
+
+.date {
+  color: var(--color-gray);
+}
+
+.message {
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-pure-white);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-gray-light);
+}

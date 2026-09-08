@@ -1,0 +1,12 @@
+date,time_utc,host,user,uid,pid,ppid,exe,cmdline,start_time_utc,end_time_utc,duration,exit_code,cpu_sec
+2025-08-10,00:48:11,WS-AURELIA-07,root,0,1,0,/sbin/init,/sbin/init splash,2025-08-09T00:48:11Z,(running),(running),0,(running)
+2025-08-10,00:48:22,WS-AURELIA-07,jhalpern,1001,812,741,/lib/systemd/systemd,/lib/systemd/systemd --user,2025-08-09T00:48:22Z,(running),(running),0,(running)
+2025-08-10,03:02:01,WS-AURELIA-07,jhalpern,1001,3088,1241,/usr/bin/sudo,sudo cat /etc/.nexus_token,2025-08-10T03:01:58Z,2025-08-10T03:02:01Z,00:00:03,1,0.04
+2025-08-10,03:10:04,WS-AURELIA-07,jhalpern,1001,3203,3202,/bin/bash,bash,2025-08-10T03:10:04Z,(running),(running),0,(running)
+2025-08-10,03:12:09,WS-AURELIA-07,jhalpern,1001,3441,3203,/usr/bin/python3,python3 /opt/nexus/support/archive_sync.py --mode verify,2025-08-10T03:12:09Z,2025-08-10T03:14:52Z,00:02:43,0,2.18
+2025-08-10,03:15:01,WS-AURELIA-07,jhalpern,1001,3722,1241,/usr/bin/sudo,sudo cat /etc/.nexus_token,2025-08-10T03:15:01Z,2025-08-10T03:15:02Z,00:00:01,0,0.02
+2025-08-10,03:17:41,WS-AURELIA-07,root,0,3847,1241,/usr/local/bin/aurelia-diag,aurelia-diag --export --silent --token-file /etc/.nexus_token,2025-08-10T03:17:41Z,2025-08-10T03:19:13Z,00:01:32,0,4.81
+2025-08-10,03:17:55,WS-AURELIA-07,root,0,3901,3847,/usr/bin/curl,"curl -s http://core-internal.nexus.local/diag/export -H X-Debug-Token:[REDACTED] -o /tmp/.d",2025-08-10T03:17:55Z,2025-08-10T03:17:57Z,00:00:02,0,0.11
+2025-08-10,03:19:12,WS-AURELIA-07,root,0,3980,3114,/usr/sbin/sshd,sshd: root [priv],2025-08-10T03:19:12Z,(running),(running),0,(running)
+2025-08-10,03:19:14,WS-AURELIA-07,root,0,3982,3981,/bin/bash,bash,2025-08-10T03:19:14Z,(running),(running),0,(running)
+2025-08-10,03:22:04,WS-AURELIA-07,root,0,4001,3982,/bin/ps,ps auxf,2025-08-10T03:22:04Z,2025-08-10T03:22:05Z,00:00:01,0,0.09

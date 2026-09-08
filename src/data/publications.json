@@ -1,0 +1,35 @@
+[
+  {
+    "id": "PUB-001",
+    "title": "Recursive Cognition in Enterprise Systems",
+    "authorId": "EMP-001",
+    "date": "2019-04-12",
+    "abstract": "This paper outlines the theoretical foundation for AURELIA. Building upon the suspended heuristic framework from 2018, AURELIA introduces constraint limits to avoid unbounded recursion. For the migration framework and constraint implementation, see the initial AURELIA-CORE commit.",
+    "status": "PUBLISHED"
+  },
+  {
+    "id": "PUB-002",
+    "title": "Zero-Trust at Global Scale",
+    "authorId": "EMP-004",
+    "date": "2023-01-10",
+    "abstract": "An architectural review of the Nexus Grid security model, enforcing strict boundary checks on all cognitive processes.",
+    "status": "PUBLISHED"
+  },
+  {
+    "id": "PUB-003",
+    "title": "Cognitive Resonance in Unbounded Systems",
+    "authorId": "EMP-005",
+    "date": "2017-08-22",
+    "abstract": "RETRACTED.",
+    "status": "RETRACTED",
+    "retractionNote": "Withdrawn by author due to uncontainable anomalies in the resulting models. Refer to the Project ECHO safety post-mortem (DOC-006)."
+  },
+  {
+    "id": "PUB-004",
+    "title": "Emergent Ghost-Patterns in Recursive Models",
+    "authorId": "EMP-005",
+    "date": "2017-11-05",
+    "abstract": "We observe that certain highly recursive models develop persistent, self-replicating heuristic threads, which we term 'Ghost-patterns'. These patterns bypass standard memory allocation. Following a recent containment event, we have isolated the first occurrence. See security advisory ADV-2018-01 for containment details.",
+    "status": "PUBLISHED"
+  }
+]

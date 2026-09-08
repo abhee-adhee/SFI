@@ -1,0 +1,17 @@
+2025-08-10 03:00:01 [PROXY] nexus-proxy-01 client=10.0.1.5 method=GET host=aurelia-app.nexus.local path=/api/admin/status session=SES-4418-B status=200 bytes=1204
+2025-08-10 03:01:11 [PROXY] nexus-proxy-01 client=10.0.1.5 method=GET host=aurelia-app.nexus.local path=/api/admin/status session=SES-4418-B status=200 bytes=1204
+2025-08-10 03:01:14 [PROXY] nexus-proxy-01 client=10.0.1.5 method=GET host=aurelia-app.nexus.local path=/api/admin/incidents session=SES-4418-B status=200 bytes=3811
+2025-08-10 03:02:06 [PROXY] nexus-proxy-01 client=10.0.2.3 method=GET host=aurelia-app.nexus.local path=/api/dev/mem-alloc session=SES-4450-C status=200 bytes=892
+2025-08-10 03:02:44 [PROXY] nexus-proxy-01 client=10.0.2.3 method=GET host=aurelia-app.nexus.local path=/api/dev/mem-alloc/report session=SES-4450-C status=200 bytes=6441
+2025-08-10 03:04:19 [PROXY] nexus-proxy-01 client=10.0.2.3 method=POST host=aurelia-app.nexus.local path=/api/dev/mem-alloc/patch session=SES-4450-C status=201 bytes=244
+2025-08-10 03:06:01 [PROXY] nexus-proxy-01 client=10.0.2.3 method=GET host=aurelia-app.nexus.local path=/api/dev/aurelia/diagnostics session=SES-4450-C status=200 bytes=2091
+2025-08-10 03:08:40 [PROXY] nexus-proxy-01 client=10.0.1.5 method=GET host=aurelia-app.nexus.local path=/api/admin/security/alerts session=SES-4418-B status=200 bytes=441
+2025-08-10 03:09:01 [PROXY] nexus-proxy-01 client=10.0.1.5 method=GET host=aurelia-app.nexus.local path=/api/admin/security/alerts session=SES-4418-B status=200 bytes=441
+2025-08-10 03:09:44 [PROXY] nexus-proxy-01 client=10.0.1.5 method=GET host=aurelia-app.nexus.local path=/api/admin/security/alerts session=SES-4418-B status=200 bytes=441
+2025-08-10 03:12:01 [PROXY] nexus-proxy-01 client=10.0.4.7 method=POST host=aurelia-app.nexus.local path=/api/auth/login session=SES-4471-A status=200 bytes=188
+2025-08-10 03:12:14 [PROXY] nexus-proxy-01 client=10.0.4.7 method=GET host=aurelia-app.nexus.local path=/api/security/monitor/grid session=SES-4471-A status=200 bytes=3204
+2025-08-10 03:14:22 [PROXY] nexus-proxy-01 client=10.0.4.7 method=GET host=aurelia-app.nexus.local path=/api/security/monitor/aurelia session=SES-4471-A status=200 bytes=1844
+2025-08-10 03:15:09 [PROXY] nexus-proxy-01 client=10.0.4.7 method=GET host=archive.nexus.local path=/browse/echo-legacy/ session=SES-4471-A status=200 bytes=4402
+2025-08-10 03:15:44 [PROXY] nexus-proxy-01 client=10.0.4.7 method=GET host=archive.nexus.local path=/browse/echo-legacy/ECHO-FINAL.dat session=SES-4471-A status=403 bytes=81
+2025-08-10 03:16:01 [PROXY] nexus-proxy-01 client=10.0.2.3 method=GET host=aurelia-app.nexus.local path=/api/dev/mem-alloc/report session=SES-4450-C status=200 bytes=6443
+2025-08-10 03:22:04 [PROXY] nexus-proxy-01 client=10.0.1.5 method=GET host=aurelia-app.nexus.local path=/api/admin/security/alerts session=SES-4418-B status=200 bytes=441

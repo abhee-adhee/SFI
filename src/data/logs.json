@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2024-10-14T08:00:00Z",
+    "level": "INFO",
+    "process": "AURELIA_CORE",
+    "message": "System startup sequence initiated."
+  },
+  {
+    "timestamp": "2024-10-14T08:05:12Z",
+    "level": "INFO",
+    "process": "NET_MGR",
+    "message": "Connected to 42 global datacenters."
+  },
+  {
+    "timestamp": "2024-10-14T14:32:01Z",
+    "level": "WARN",
+    "process": "MEM_ALLOC",
+    "message": "Unusual memory allocation spike in sector 7G."
+  },
+  {
+    "timestamp": "2024-10-15T02:11:45Z",
+    "level": "CRITICAL",
+    "process": "UNKNOWN",
+    "message": "GHOST process spawned without parent. Access level: ROOT."
+  }
+]

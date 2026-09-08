@@ -1,0 +1,120 @@
+[
+  {
+    "id": "BOSS-01",
+    "category": "boss",
+    "difficulty": "boss",
+    "title": "AURELIA CORE",
+    "objective": "Investigate AURELIA Core's restricted diagnostic interface, reconstruct internal state parameters from historical artifacts, and bypass authorization boundaries.",
+    "prerequisites": [
+      "WEB-05",
+      "REV-04"
+    ],
+    "dependencies": [
+      "WEB-05",
+      "REV-04",
+      "PWN-03"
+    ],
+    "relationshipTypes": [
+      "bossDependency"
+    ],
+    "estimatedMinutes": 50,
+    "entities": [
+      "PRJ-AURELIA",
+      "EMP-001",
+      "EMP-007"
+    ],
+    "storyEvents": [
+      "TL-005"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/bosses/BOSS-01/core_diagnostic",
+      "/artifacts/challenges/bosses/BOSS-01/README.txt"
+    ],
+    "technicalMechanism": "Multi-stage investigation combining API endpoint discovery, artifact binary inspection, and state token reconstruction (timestamp '2025-10-14T08:00:00Z' and module ID 'AURELIA-CORE-V4').",
+    "hintLevels": [
+      "Access /aurelia/core or inspect /api/v1/aurelia/core to discover the internal diagnostic component parameters.",
+      "Analyze the core_diagnostic binary with timestamp '2025-10-14T08:00:00Z' and module ID 'AURELIA-CORE-V4' to calculate the state token.",
+      "Submit the calculated token '8d2efcc213b3f8f35e859b62c458744399be773f9d1632585c51d6721d6a0d0c' to POST /api/v1/aurelia/core."
+    ],
+    "interactive": true,
+    "points": 1000,
+    "requiredEvidence": [
+      "FOR-04 (Incident Timestamp)",
+      "REV-04 (Core Module Identifier)"
+    ],
+    "optionalEvidence": [
+      "WEB-05 (SSRF Endpoint Discovery)",
+      "OSINT-04 (Evolution Timeline)"
+    ],
+    "supportingEvidence": [
+      "CRY-04 (Shared Cryptographic Material)"
+    ],
+    "convergenceRoutes": [
+      "Web -> RE -> Core Verification",
+      "Forensics -> RE -> Core Verification"
+    ]
+  },
+  {
+    "id": "BOSS-02",
+    "category": "boss",
+    "difficulty": "boss",
+    "title": "GHOST",
+    "objective": "Uncover the architectural origin of GHOST by correlating evidence across multiple investigative routes to generate the final state handshake token.",
+    "prerequisites": [
+      "BOSS-01"
+    ],
+    "dependencies": [
+      "BOSS-01",
+      "FOR-04",
+      "OSINT-04",
+      "CRY-04",
+      "MISC-03"
+    ],
+    "relationshipTypes": [
+      "bossDependency"
+    ],
+    "estimatedMinutes": 60,
+    "entities": [
+      "PRJ-ECHO",
+      "PRJ-AURELIA",
+      "EMP-001",
+      "EMP-005"
+    ],
+    "storyEvents": [
+      "TL-001",
+      "TL-002",
+      "TL-004",
+      "TL-005"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/bosses/BOSS-02/ghost_handshake",
+      "/artifacts/challenges/bosses/BOSS-02/README.txt"
+    ],
+    "technicalMechanism": "Multi-route evidence convergence protocol validation. Accepts Route A (OSINT+FOR+WEB), Route B (CRY+REV+FOR), or Route C (WEB+REV+MISC) parameter handshakes to resolve the final GHOST architectural origin flag.",
+    "hintLevels": [
+      "GHOST is not an external attacker; it originated within Project ECHO prior to AURELIA. Choose an evidence convergence route (Route A, B, or C).",
+      "Run ghost_handshake with your chosen route parameters (e.g. RouteA 2015 ECHO-SUB-01 GHOST-BEACON-09) to verify evidence correlation.",
+      "Submit your route payload to POST /api/v1/system/ghost to finalize the handshake and unlock the final CTF revelation."
+    ],
+    "interactive": true,
+    "points": 1000,
+    "requiredEvidence": [
+      "ECHO-Era Historical Trace",
+      "GHOST Beacon Vector Identifier"
+    ],
+    "optionalEvidence": [
+      "RSA Shared Prime Modulus",
+      "NXC Classified Container Record",
+      "Retracted Research Memo"
+    ],
+    "supportingEvidence": [
+      "Vigenere Subsystem Memo",
+      "XOR Reused Stream Log"
+    ],
+    "convergenceRoutes": [
+      "Route A: OSINT-04 + FOR-04 + WEB-05",
+      "Route B: CRY-04 + REV-03 + FOR-03",
+      "Route C: MISC-01 + MISC-03 + REV-03"
+    ]
+  }
+]

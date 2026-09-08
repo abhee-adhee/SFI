@@ -1,0 +1,95 @@
+[
+  {
+    "id": "EMP-001",
+    "name": "Dr. Evelyn Vance",
+    "role": "Chief AI Architect",
+    "department": "DEPT-AI",
+    "bio": "Lead architect of AURELIA. Pioneer in recursive cognitive modeling.",
+    "projects": [
+      "PRJ-AURELIA",
+      "PRJ-COGNITION"
+    ],
+    "publications": [
+      "PUB-001"
+    ],
+    "employmentDate": "2019-03-15"
+  },
+  {
+    "id": "EMP-002",
+    "name": "Marcus Chen",
+    "role": "VP of Core Systems",
+    "department": "DEPT-SYS",
+    "bio": "Oversees the global infrastructure network supporting AURELIA deployments.",
+    "projects": [
+      "PRJ-INFRA-NET"
+    ],
+    "publications": [],
+    "employmentDate": "2020-08-01"
+  },
+  {
+    "id": "EMP-003",
+    "name": "Sarah Ockham",
+    "role": "Senior Systems Engineer",
+    "department": "DEPT-SYS",
+    "bio": "Key contributor to AURELIA memory management and allocation systems.",
+    "projects": [
+      "PRJ-AURELIA",
+      "PRJ-MEM-ALLOC"
+    ],
+    "publications": [],
+    "employmentDate": "2022-11-10"
+  },
+  {
+    "id": "EMP-004",
+    "name": "David Aris",
+    "role": "Chief Security Officer",
+    "department": "DEPT-SEC",
+    "bio": "Defines zero-trust architecture for all NEXUS deployments.",
+    "projects": [
+      "PRJ-ZERO-TRUST"
+    ],
+    "publications": [
+      "PUB-002"
+    ],
+    "employmentDate": "2021-02-20"
+  },
+  {
+    "id": "EMP-005",
+    "name": "Dr. Arthur Penhaligon",
+    "role": "Director of Advanced Research",
+    "department": "DEPT-RES",
+    "bio": "Focuses on theoretical boundaries of artificial intelligence. Rarely seen in public operations.",
+    "projects": [
+      "PRJ-ECHO",
+      "PRJ-AURELIA-ALPHA"
+    ],
+    "publications": [
+      "PUB-003"
+    ],
+    "employmentDate": "2016-09-01"
+  },
+  {
+    "id": "EMP-006",
+    "name": "Elena Rostova",
+    "role": "Lead Security Analyst",
+    "department": "DEPT-SEC",
+    "bio": "Monitors global anomaly detection grids.",
+    "projects": [
+      "PRJ-ZERO-TRUST"
+    ],
+    "publications": [],
+    "employmentDate": "2024-01-15"
+  },
+  {
+    "id": "EMP-007",
+    "name": "J.T. Halpern",
+    "role": "Systems Maintainer",
+    "department": "DEPT-SYS",
+    "bio": "Maintains legacy subsystems and archival repositories.",
+    "projects": [
+      "PRJ-ARCHIVE"
+    ],
+    "publications": [],
+    "employmentDate": "2018-05-05"
+  }
+]

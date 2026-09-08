@@ -1,0 +1,144 @@
+[
+  {
+    "id": "CRY-01",
+    "category": "crypto",
+    "difficulty": "beginner",
+    "title": "INTERCEPT",
+    "objective": "Decrypt an intercepted internal message encrypted with a structured classical cipher.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 15,
+    "entities": [
+      "EMP-007",
+      "PRJ-ECHO"
+    ],
+    "storyEvents": [
+      "TL-001"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/crypto/CRY-01/intercepted_memo.txt",
+      "/artifacts/challenges/crypto/CRY-01/README.txt"
+    ],
+    "technicalMechanism": "The message is encrypted with a Vigenère cipher. Signal intelligence indicates the key is set to the primary AI engine codename (AURELIA). Cryptanalysis or key-recovery reveals the inner dispatch parameter.",
+    "hintLevels": [
+      "Examine the structure of the ciphertext in intercepted_memo.txt. The letter distribution and formatting point to a classic polyalphabetic substitution cipher.",
+      "The README mentions signal intelligence indicating the key is the codename of the primary AI engine.",
+      "Decrypt the Vigenère ciphertext using key 'AURELIA' to reveal the dispatch parameter."
+    ],
+    "interactive": false,
+    "points": 100
+  },
+  {
+    "id": "CRY-02",
+    "category": "crypto",
+    "difficulty": "intermediate",
+    "title": "ARCHIVED COMMUNICATION",
+    "objective": "Exploit key reuse across two encrypted ECHO communication streams to recover the emergency alert plaintext.",
+    "prerequisites": [],
+    "dependencies": [
+      "CRY-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 25,
+    "entities": [
+      "EMP-005",
+      "EMP-007",
+      "PRJ-ECHO"
+    ],
+    "storyEvents": [
+      "TL-002"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/crypto/CRY-02/backup_log.enc",
+      "/artifacts/challenges/crypto/CRY-02/containment_alert.enc",
+      "/artifacts/challenges/crypto/CRY-02/README.txt"
+    ],
+    "technicalMechanism": "Both ciphertexts C1 and C2 share the exact same XOR keystream (Many-Time Pad). Since C1 XOR C2 = P1 XOR P2, providing the known header structure of P1 allows crib dragging to recover P2.",
+    "hintLevels": [
+      "Because both messages were encrypted using the same keystream K, XORing the two hex ciphertexts together removes K and yields P1 XOR P2.",
+      "Use the known starting string of Message 1 ({\"sender\":\"SYS-ARCHIVE\",\"receiver\":...) to crib drag and recover the corresponding bytes of Message 2.",
+      "Once you recover Message 2, locate the 'evidence' JSON field containing the flag."
+    ],
+    "interactive": false,
+    "points": 200
+  },
+  {
+    "id": "CRY-03",
+    "category": "crypto",
+    "difficulty": "intermediate",
+    "title": "GHOST TALKS",
+    "objective": "Crack AURELIA's weak 24-bit LCG stream cipher implementation to decrypt intercepted telemetry.",
+    "prerequisites": [],
+    "dependencies": [
+      "CRY-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 35,
+    "entities": [
+      "EMP-001",
+      "PRJ-AURELIA"
+    ],
+    "storyEvents": [
+      "TL-005"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/crypto/CRY-03/telemetry_crypto.py",
+      "/artifacts/challenges/crypto/CRY-03/ghost_telemetry.enc",
+      "/artifacts/challenges/crypto/CRY-03/README.txt"
+    ],
+    "technicalMechanism": "The stream cipher uses a 24-bit LCG state. A 24-bit seed space is small enough (16 million possibilities) to brute-force in seconds, or reverse using the known telemetry header.",
+    "hintLevels": [
+      "Inspect telemetry_crypto.py. Note that the seed is masked with 0xFFFFFF, limiting the seed search space to 2^24 (16,777,216 possible seeds).",
+      "Use the known header prefix ({\"system\":\"AURELIA\",\"stream\":\"telemetry\":...) to check candidate seeds by encrypting/decrypting the first 16 bytes.",
+      "Once the seed is found, instantiate LCGStreamCipher(seed) and decrypt ghost_telemetry.enc."
+    ],
+    "interactive": false,
+    "points": 300
+  },
+  {
+    "id": "CRY-04",
+    "category": "crypto",
+    "difficulty": "hard",
+    "title": "THE KEY",
+    "objective": "Exploit a shared prime vulnerability between AURELIA and ECHO public keys to factor the modulus and decrypt the legacy archive.",
+    "prerequisites": [],
+    "dependencies": [
+      "CRY-03"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 45,
+    "entities": [
+      "EMP-001",
+      "EMP-005",
+      "PRJ-ECHO",
+      "PRJ-AURELIA"
+    ],
+    "storyEvents": [
+      "TL-002",
+      "TL-004"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/crypto/CRY-04/aurelia_system.pub",
+      "/artifacts/challenges/crypto/CRY-04/echo_legacy.pub",
+      "/artifacts/challenges/crypto/CRY-04/archive_secret.enc",
+      "/artifacts/challenges/crypto/CRY-04/README.txt"
+    ],
+    "technicalMechanism": "The RSA public keys N1 and N2 share a common prime p due to flawed key generation. Calculating GCD(N1, N2) yields p, allowing N2 = p * q2 to be factored, recovering private key d2.",
+    "hintLevels": [
+      "Extract the moduli N1 and N2 from aurelia_system.pub and echo_legacy.pub using Python cryptography/pyasn1 or standard ASN.1 parsing.",
+      "Calculate p = GCD(N1, N2). Since p > 1, compute q2 = N2 / p and calculate the private exponent d2 = mod_inverse(e, (p-1)*(q2-1)).",
+      "Perform RSA decryption on the hex ciphertext in archive_secret.enc using (d2, N2) to recover the payload."
+    ],
+    "interactive": false,
+    "points": 400
+  }
+]

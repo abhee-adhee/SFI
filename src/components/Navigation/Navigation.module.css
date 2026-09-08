@@ -1,0 +1,42 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-bottom: 1px solid var(--color-gray-dark);
+  background-color: var(--color-black);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-pure-white);
+}
+
+.accent {
+  color: var(--color-acid-green);
+  margin-left: 0.2rem;
+}
+
+.links {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.link {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-gray-light);
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-pure-white);
+}
+
+/* Optional glitch effect on hover could go here later */

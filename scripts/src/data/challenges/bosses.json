@@ -1,0 +1,57 @@
+[
+  {
+    "id": "BOSS-01",
+    "category": "boss",
+    "difficulty": "boss",
+    "title": "AURELIA CORE",
+    "objective": "[PLACEHOLDER] Compromise the deepest technical layer of AURELIA.",
+    "prerequisites": [],
+    "dependencies": [
+      "WEB-05",
+      "REV-04",
+      "PWN-03"
+    ],
+    "relationshipTypes": [
+      "bossDependency"
+    ],
+    "estimatedMinutes": 120,
+    "entities": [
+      "SYS-AURELIA"
+    ],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Multi-stage web + pwn + RE exploitation of the AURELIA engine.",
+    "hintLevels": [],
+    "interactive": true,
+    "points": 1000
+  },
+  {
+    "id": "BOSS-02",
+    "category": "boss",
+    "difficulty": "boss",
+    "title": "GHOST",
+    "objective": "[PLACEHOLDER] Uncover the true nature of GHOST and Project ECHO.",
+    "prerequisites": [],
+    "dependencies": [
+      "BOSS-01",
+      "FOR-04",
+      "OSINT-04",
+      "CRY-04",
+      "MISC-03"
+    ],
+    "relationshipTypes": [
+      "bossDependency"
+    ],
+    "estimatedMinutes": 120,
+    "entities": [
+      "PRJ-ECHO",
+      "EMP-005"
+    ],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Correlation of all evidence and cryptographic culmination.",
+    "hintLevels": [],
+    "interactive": false,
+    "points": 1000
+  }
+]

@@ -1,0 +1,79 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  outline: none; /* For the tabIndex focus */
+}
+
+.main {
+  flex: 1;
+  padding: var(--spacing-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-gray-dark);
+  padding-bottom: var(--spacing-lg);
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-pure-white);
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  color: var(--color-acid-green);
+  letter-spacing: 0.1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.panel {
+  border: 1px solid var(--color-gray-dark);
+  padding: var(--spacing-lg);
+  background-color: var(--color-black);
+}
+
+.panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-pure-white);
+  border-bottom: 1px solid var(--color-gray-dark);
+  padding-bottom: var(--spacing-sm);
+}
+
+.panel p {
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-top: 1px solid var(--color-gray-dark);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-gray);
+}
+
+.sysId {
+  color: var(--color-gray-light);
+}
+
+.devHint {
+  color: var(--color-acid-green);
+  opacity: 0.5;
+}

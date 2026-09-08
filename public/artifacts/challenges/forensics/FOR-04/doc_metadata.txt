@@ -1,0 +1,88 @@
+NEXUS DYNAMICS — DIGITAL FORENSICS UNIT
+File System Metadata Report
+Case: INC-2025-01
+Acquired: 2025-08-10 04:05:00 UTC
+Tool: nexus-fstat v2.0.1
+
+Legend:
+  path      — File path
+  size      — File size in bytes
+  atime     — Last access time (UTC)
+  mtime     — Last modified time (UTC)
+  ctime     — Metadata change time (UTC)
+  owner     — File owner
+  perms     — Permissions (octal)
+  note      — Examiner note
+
+================================================================================
+
+--- NEXUS TOKEN FILE ---
+path:  /etc/.nexus_token
+size:  44
+atime: 2025-08-10T03:15:01Z
+mtime: 2023-11-14T08:00:00Z
+ctime: 2023-11-14T08:00:00Z
+owner: root
+perms: 0600
+note:  Accessed at 03:15:01 — matches auth.log sudo entry. File itself unchanged since provisioning.
+
+--- DIAGNOSTIC BINARY ---
+path:  /usr/local/bin/aurelia-diag
+size:  184320
+atime: 2025-08-10T03:17:41Z
+mtime: 2025-08-10T00:46:02Z
+ctime: 2025-08-10T00:46:02Z
+owner: root
+perms: 0755
+note:  Binary modified at 00:46:02 — 18 minutes after jhalpern downloaded aurelia-diag-0.9-dev.tar.gz.
+note:  Not present in NEXUS official software catalog. SHA-256 does not match any signed release.
+
+--- TMP EXPORT FILE ---
+path:  /tmp/.d
+size:  183
+atime: 2025-08-10T03:17:55Z
+mtime: 2025-08-10T03:17:52Z
+ctime: 2025-08-10T03:17:52Z
+owner: root
+perms: 0644
+note:  Hidden file (dot-prefix). Created by aurelia-diag at 03:17:52. Size matches diag export log entry.
+
+--- ARCHIVE FILE (SYS-ARCHIVE cold storage) ---
+path:  /mnt/archive/echo-legacy/ECHO-FINAL.dat
+size:  2097152
+atime: 2025-08-10T03:09:44Z
+mtime: 2018-11-30T22:04:11Z
+ctime: 2018-11-30T22:04:11Z
+owner: root
+perms: 0640
+note:  Last accessed 2025-08-10T03:09:44Z — first access since 2018-11-30.
+note:  Official report states SYS-ARCHIVE was NOT accessed. This metadata contradicts that claim.
+note:  Access was denied (403) at the application layer but the filesystem registered an atime update.
+       This indicates the access reached the storage layer before being rejected.
+
+--- AURELIA DIAG DOWNLOAD ---
+path:  /home/jhalpern/Downloads/aurelia-diag-0.9-dev.tar.gz
+size:  184320
+atime: 2025-08-10T00:46:01Z
+mtime: 2025-08-10T00:45:02Z
+ctime: 2025-08-10T00:45:02Z
+owner: jhalpern
+perms: 0644
+note:  Downloaded from docs.nexus.local at 00:45:02. Binary extracted to /usr/local/bin/ at 00:46:02.
+
+--- MAINTENANCE LOG ---
+path:  /home/jhalpern/notes/maintenance_log.txt
+size:  8812
+atime: 2025-08-09T23:04:41Z
+mtime: 2025-08-09T23:04:41Z
+ctime: 2025-08-09T23:04:41Z
+owner: jhalpern
+perms: 0644
+note:  Last modified 23:04 on Aug 9 — before the incident. Not modified during incident window.
+
+================================================================================
+SUMMARY OF METADATA CONTRADICTIONS:
+  1. ECHO-FINAL.dat atime (03:09:44) contradicts official report claim: "SYS-ARCHIVE — no access recorded"
+  2. aurelia-diag binary present and executed — not a registered NEXUS service
+  3. /tmp/.d created at 03:17:52 — 78 minutes before official detection time of 04:30:00
+================================================================================

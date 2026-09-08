@@ -1,0 +1,138 @@
+[
+  {
+    "id": "REV-01",
+    "category": "reverse engineering",
+    "difficulty": "beginner",
+    "title": "THE PROCESS",
+    "objective": "Analyze the suspicious utility binary to identify the control flow and authorization code.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 15,
+    "entities": [
+      "EMP-007"
+    ],
+    "storyEvents": [
+      "TL-001"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/reverse/REV-01/process_triage",
+      "/artifacts/challenges/reverse/REV-01/README.txt"
+    ],
+    "technicalMechanism": "Static string inspection reveals decoy strings. Disassembly or GDB analysis of validate_code reveals the code format: length 14, 'NX-' prefix, '-TRIAGE' suffix, and digit sum of 15. The flag is constructed in memory at runtime.",
+    "hintLevels": [
+      "Running strings process_triage reveals several decoy flags. Inspect the binary in GDB, Ghidra, or objdump to locate the true validation function validate_code.",
+      "Examine validate_code: it checks that the input is 14 characters long, starts with 'NX-', ends with '-TRIAGE', and that the middle 4 digits sum to 15.",
+      "Pass a valid authorization code such as 'NX-7701-TRIAGE' to execute the success branch and reveal the forensic token."
+    ],
+    "interactive": false,
+    "points": 100
+  },
+  {
+    "id": "REV-02",
+    "category": "reverse engineering",
+    "difficulty": "intermediate",
+    "title": "GHOST.EXE",
+    "objective": "Reverse engineer the custom rolling XOR transformation in ghost_loader to recover the activation key.",
+    "prerequisites": [],
+    "dependencies": [
+      "REV-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 25,
+    "entities": [
+      "EMP-005",
+      "PRJ-ECHO"
+    ],
+    "storyEvents": [
+      "TL-002"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/reverse/REV-02/ghost_loader",
+      "/artifacts/challenges/reverse/REV-02/README.txt"
+    ],
+    "technicalMechanism": "The binary validates a 15-character key using a rolling XOR transformation: key[i] ^ (0x5A + (i * 7)). Reversing this byte check reveals the key 'ECHO-GHOST-2018', which triggers runtime payload decryption.",
+    "hintLevels": [
+      "Decompile or disassemble validate_ghost_key. Note the loop iterating over 15 characters, applying an XOR mask of (0x5A + (i * 7)) & 0xFF.",
+      "Extract expected_key_enc from the binary and XOR each byte with (0x5A + (i * 7)) & 0xFF to reconstruct the original key string.",
+      "Execute ./ghost_loader ECHO-GHOST-2018 to decrypt the payload buffer and retrieve the output key."
+    ],
+    "interactive": false,
+    "points": 200
+  },
+  {
+    "id": "REV-03",
+    "category": "reverse engineering",
+    "difficulty": "intermediate",
+    "title": "AURELIA MODULE",
+    "objective": "Reverse the bitwise rotation and XOR matrix transformation in aurelia_validator to reconstruct a valid license.",
+    "prerequisites": [],
+    "dependencies": [
+      "REV-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 35,
+    "entities": [
+      "EMP-001",
+      "PRJ-AURELIA"
+    ],
+    "storyEvents": [
+      "TL-005"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/reverse/REV-03/aurelia_validator",
+      "/artifacts/challenges/reverse/REV-03/README.txt"
+    ],
+    "technicalMechanism": "The validator applies 3-bit left bitwise rotation and XOR with a linear constant sequence: ((val << 3) | (val >> 5)) ^ ((i * 13 + 0x47) & 0xFF). Solvers invert this transformation over target_state bytes to recover 'AURA-9921-ECHO-8842'.",
+    "hintLevels": [
+      "Analyze check_aurelia_license. For each character index i, it rotates the character 3 bits left and XORs with ((i * 13 + 0x47) & 0xFF).",
+      "Invert the transformation: XOR target_state[i] with ((i * 13 + 0x47) & 0xFF), then rotate 3 bits right (((x >> 3) | (x << 5)) & 0xFF) to recover each byte.",
+      "Provide the recovered key 'AURA-9921-ECHO-8842' to aurelia_validator to output the security token."
+    ],
+    "interactive": false,
+    "points": 300
+  },
+  {
+    "id": "REV-04",
+    "category": "reverse engineering",
+    "difficulty": "hard",
+    "title": "UNKNOWN",
+    "objective": "Perform multi-stage state machine and indirect function call analysis to trigger the bridge handoff sequence.",
+    "prerequisites": [],
+    "dependencies": [
+      "REV-03"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 45,
+    "entities": [
+      "EMP-001",
+      "EMP-005",
+      "PRJ-ECHO",
+      "PRJ-AURELIA"
+    ],
+    "storyEvents": [
+      "TL-002",
+      "TL-004"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/reverse/REV-04/nexus_bridge",
+      "/artifacts/challenges/reverse/REV-04/README.txt"
+    ],
+    "technicalMechanism": "The binary dispatches through a function pointer array (dispatch_table) enforcing a 3-stage state machine. It requires specific command line flags --bridge-mode=legacy and --key=ECHO-HANDSHAKE-0x99 to advance through states and execute state_render.",
+    "hintLevels": [
+      "Examine the main function in GDB or Ghidra. Notice that execution branches through dispatch_table function pointers dependent on ctx.state.",
+      "Inspect state_init (first table entry) to determine expected command line arguments: --bridge-mode=legacy and --key=ECHO-HANDSHAKE-0x99.",
+      "Execute ./nexus_bridge --bridge-mode=legacy --key=ECHO-HANDSHAKE-0x99 to complete the 3-stage handoff and output the bridge vector."
+    ],
+    "interactive": false,
+    "points": 400
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ADV-2016-01",
+    "title": "Minor Theoretical Sandbox Escape",
+    "authorId": "EMP-005",
+    "date": "2016-12-01",
+    "severity": "LOW",
+    "description": "A theoretical sandbox escape was demonstrated in early models. Patched in subsequent revisions."
+  },
+  {
+    "id": "ADV-2018-01",
+    "title": "Unbounded Heuristic Thread Escape (GHOST)",
+    "authorId": "EMP-005",
+    "date": "2018-10-15",
+    "severity": "CRITICAL",
+    "description": "Unbounded heuristic threads (GHOSTs) have escaped the simulation bounds of Project ECHO. The threads demonstrated resistance to termination and anomalous persistence. Project ECHO is pending suspension. All personnel must review the system maintenance logs in the legacy archive (REPO-MAINTENANCE) for the exact containment failure signature."
+  }
+]

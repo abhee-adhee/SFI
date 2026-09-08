@@ -1,0 +1,23 @@
+2025-08-10 03:00:00 kernel: [182340.114] NEXUS watchdog: system healthy
+2025-08-10 03:02:07 systemd[1]: session-42.scope: Succeeded.
+2025-08-10 03:04:33 sudo[3088]: jhalpern ran /usr/local/bin/aurelia-diag (failed attempt — wrong token path)
+2025-08-10 03:09:55 sshd[3201]: Accepted publickey for jhalpern from 10.0.4.1 port 52441 ssh2
+2025-08-10 03:10:01 systemd-logind[5012]: New session 51 of user jhalpern.
+2025-08-10 03:12:00 kernel: [184140.882] NEXUS watchdog: minor latency spike detected on aurelia-core interface
+2025-08-10 03:12:07 kernel: [184147.203] NEXUS watchdog: aurelia-core heartbeat timeout (attempt 1/3)
+2025-08-10 03:12:22 kernel: [184162.418] NEXUS watchdog: aurelia-core heartbeat timeout (attempt 2/3)
+2025-08-10 03:12:44 kernel: [184184.091] NEXUS watchdog: aurelia-core heartbeat FAILED — marking degraded
+2025-08-10 03:13:01 systemd[1]: aurelia-support.service: State changed to degraded
+2025-08-10 03:13:09 systemd[1]: aurelia-support.service: Reconnected to aurelia-core.nexus.local:8443
+2025-08-10 03:15:01 sudo[3722]: jhalpern ran /bin/cat /etc/.nexus_token — SUCCESS
+2025-08-10 03:15:09 kernel: [184509.771] nf_conntrack: SES-4471-A src=10.0.4.7 dst=archive.nexus.local:443 state=ESTABLISHED
+2025-08-10 03:17:41 sudo[3844]: jhalpern ran /usr/local/bin/aurelia-diag --export --silent --token-file /etc/.nexus_token — SUCCESS
+2025-08-10 03:17:41 kernel: [184661.004] new process: pid=3847 comm="aurelia-diag" parent=1241 (bash) uid=0
+2025-08-10 03:17:44 kernel: [184664.218] nf_conntrack: new flow pid=3847 src=10.0.4.7:54001 dst=core-internal.nexus.local:80 proto=TCP
+2025-08-10 03:17:52 kernel: [184672.119] nf_conntrack: pid=3847 wrote 183 bytes to /tmp/.d via vfs
+2025-08-10 03:17:55 sudo[3900]: jhalpern ran /bin/curl ... -o /tmp/.d — SUCCESS
+2025-08-10 03:17:56 kernel: [184676.440] nf_conntrack: new flow pid=3847 src=10.0.4.7:54122 dst=198.51.100.47:4444 proto=TCP ALERT:EXTERNAL_HOST
+2025-08-10 03:19:12 kernel: [184772.008] process exit: pid=3847 exit_code=0
+2025-08-10 03:22:01 sshd[3980]: Accepted keyboard-interactive/pam for root from 198.51.100.47 port 39412 ssh2
+2025-08-10 03:22:04 systemd-logind[5012]: New session 53 of user root.
+2025-08-10 03:30:00 kernel: [185940.001] NEXUS watchdog: system status DEGRADED

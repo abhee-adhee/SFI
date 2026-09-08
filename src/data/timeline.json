@@ -1,0 +1,56 @@
+[
+  {
+    "id": "TL-001",
+    "year": "2015",
+    "event": "NEXUS Dynamics founded to pursue next-generation computing infrastructure.",
+    "type": "COMPANY"
+  },
+  {
+    "id": "TL-002",
+    "year": "2016",
+    "event": "Advanced Research division established by Dr. Arthur Penhaligon.",
+    "type": "RESEARCH"
+  },
+  {
+    "id": "TL-003",
+    "year": "2018",
+    "event": "First prototype of autonomous resource allocation grid deployed.",
+    "type": "PRODUCT"
+  },
+  {
+    "id": "TL-004",
+    "year": "2019",
+    "event": "Dr. Evelyn Vance joins as Chief AI Architect; conceptualization of AURELIA begins.",
+    "type": "PERSONNEL"
+  },
+  {
+    "id": "TL-005",
+    "year": "2021",
+    "event": "AURELIA Alpha testing phase initiated internally.",
+    "type": "PRODUCT"
+  },
+  {
+    "id": "TL-006",
+    "year": "2023",
+    "event": "AURELIA v1.0 officially launched for enterprise infrastructure management.",
+    "type": "PRODUCT"
+  },
+  {
+    "id": "TL-007",
+    "year": "2024",
+    "event": "AURELIA v2.0 global deployment across 42 datacenters.",
+    "type": "PRODUCT"
+  },
+  {
+    "id": "TL-008",
+    "year": "2025",
+    "event": "Security overhaul following minor anomaly in routing logic. Zero-Trust protocol enforced.",
+    "type": "SECURITY"
+  },
+  {
+    "id": "TL-009",
+    "year": "2026",
+    "event": "AURELIA v3.2 operates at peak efficiency. (Present Day)",
+    "type": "COMPANY"
+  }
+]

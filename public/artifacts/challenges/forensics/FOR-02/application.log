@@ -1,0 +1,23 @@
+2025-08-10 03:00:04 [INFO] session=SES-4418-B user=david.aris src=10.0.1.5 action=AUTH_OK resource=/api/admin/status
+2025-08-10 03:01:11 [INFO] session=SES-4418-B user=david.aris action=READ resource=/api/admin/status result=200 latency=18ms
+2025-08-10 03:01:14 [INFO] session=SES-4418-B user=david.aris action=READ resource=/api/admin/incidents result=200 latency=22ms
+2025-08-10 03:02:09 [INFO] session=SES-4450-C user=sarah.ockham src=10.0.2.3 action=AUTH_OK resource=/api/dev/mem-alloc
+2025-08-10 03:02:44 [INFO] session=SES-4450-C user=sarah.ockham action=READ resource=/api/dev/mem-alloc/report result=200 latency=31ms
+2025-08-10 03:04:19 [INFO] session=SES-4450-C user=sarah.ockham action=WRITE resource=/api/dev/mem-alloc/patch result=201 latency=144ms
+2025-08-10 03:06:01 [INFO] session=SES-4450-C user=sarah.ockham action=READ resource=/api/dev/aurelia/diagnostics result=200 latency=55ms
+2025-08-10 03:08:40 [INFO] session=SES-4418-B user=david.aris action=READ resource=/api/admin/security/alerts result=200 latency=19ms
+2025-08-10 03:09:01 [INFO] session=SES-4418-B user=david.aris action=READ resource=/api/admin/security/alerts result=200 latency=17ms
+2025-08-10 03:09:44 [INFO] session=SES-4418-B user=david.aris action=READ resource=/api/admin/security/alerts result=200 latency=21ms
+2025-08-10 03:12:01 [INFO] session=SES-4471-A user=elena.rostova src=10.0.3.2 action=AUTH_OK resource=/api/security/monitor
+2025-08-10 03:12:14 [INFO] session=SES-4471-A user=elena.rostova action=READ resource=/api/security/monitor/grid result=200 latency=44ms
+2025-08-10 03:14:22 [INFO] session=SES-4471-A user=elena.rostova action=READ resource=/api/security/monitor/aurelia result=200 latency=61ms
+2025-08-10 03:15:09 [INFO] session=SES-4471-A user=elena.rostova action=READ resource=archive://SYS-ARCHIVE/echo-legacy/ result=200 latency=2104ms receipt_b64=ZmxhZ3tTZXNzaW9uX0hpamFja19Pcl9JbXBlcnNvbmF0aW9ufQ==
+2025-08-10 03:15:44 [WARN] session=SES-4471-A user=elena.rostova action=READ resource=archive://SYS-ARCHIVE/echo-legacy/ECHO-FINAL.dat result=403 latency=12ms reason=CLEARANCE_INSUFFICIENT
+2025-08-10 03:16:01 [INFO] session=SES-4450-C user=sarah.ockham action=READ resource=/api/dev/mem-alloc/report result=200 latency=28ms
+2025-08-10 03:17:44 [INFO] session=SES-4471-A action=PROCESS_SPAWN pid=3847 exe=aurelia-diag parent_pid=1241
+2025-08-10 03:17:52 [INFO] session=SES-4471-A action=DIAG_EXPORT pid=3847 bytes=183 destination=/tmp/.d
+2025-08-10 03:17:56 [INFO] session=SES-4471-A action=NET_CONNECT pid=3847 dst=198.51.100.47:4444 proto=TCP
+2025-08-10 03:19:12 [WARN] session=SES-4471-A action=PROCESS_EXIT pid=3847 exit_code=0 duration=00:01:28
+2025-08-10 03:22:04 [INFO] session=SES-4418-B user=david.aris action=READ resource=/api/admin/security/alerts result=200 latency=18ms
+2025-08-10 03:30:01 [INFO] session=SES-4418-B user=david.aris action=AUTH_END result=SESSION_TIMEOUT
+2025-08-10 03:30:01 [INFO] session=SES-4450-C user=sarah.ockham action=AUTH_END result=SESSION_TIMEOUT

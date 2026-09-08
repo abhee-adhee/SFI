@@ -1,0 +1,67 @@
+.container {
+  border: 1px solid var(--color-gray-dark);
+  padding: var(--spacing-md);
+  font-family: var(--font-mono);
+  background-color: var(--color-near-black);
+  width: 100%;
+  max-width: 400px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-gray-dark);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.label {
+  color: var(--color-gray-light);
+  font-size: 0.75rem;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.operational .value { color: var(--color-white); }
+.degraded .value { color: var(--color-acid-green); }
+.compromised .value { color: var(--color-purple); }
+
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.metricLabel {
+  color: var(--color-gray);
+}
+
+.metricValue {
+  color: var(--color-white);
+}
+
+.alert {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-purple);
+  background-color: var(--color-purple-dim);
+  color: var(--color-purple);
+  font-size: 0.75rem;
+  font-weight: 700;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}

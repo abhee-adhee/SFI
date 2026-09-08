@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "format": "nexus-memsnap/1.0",
+    "source": "WS-AURELIA-07",
+    "acquired": "2025-08-10T03:19:30Z",
+    "acquirer": "EMP-006",
+    "tool": "nexus-memacq v1.4.2",
+    "total_ram_mb": 8192,
+    "note": "Structured process-memory snapshot. Analyse with jq or python3."
+  },
+  "pslist": [
+    { "pid": 1,    "ppid": 0,    "name": "systemd",          "user": "root",      "state": "Ss",  "start_time": "2025-08-09T00:48:11Z", "threads": 1,  "virt_kb": 169316, "res_kb": 9124  },
+    { "pid": 213,  "ppid": 1,    "name": "systemd-journald", "user": "root",      "state": "Ss",  "start_time": "2025-08-09T00:48:14Z", "threads": 1,  "virt_kb": 48932,  "res_kb": 6780  },
+    { "pid": 241,  "ppid": 1,    "name": "systemd-udevd",    "user": "root",      "state": "Ss",  "start_time": "2025-08-09T00:48:15Z", "threads": 1,  "virt_kb": 22688,  "res_kb": 1984  },
+    { "pid": 447,  "ppid": 1,    "name": "rsyslogd",         "user": "root",      "state": "Ssl", "start_time": "2025-08-09T00:48:17Z", "threads": 4,  "virt_kb": 71888,  "res_kb": 8644  },
+    { "pid": 502,  "ppid": 1,    "name": "agetty",           "user": "root",      "state": "Ss",  "start_time": "2025-08-09T00:48:18Z", "threads": 1,  "virt_kb": 16760,  "res_kb": 1028  },
+    { "pid": 503,  "ppid": 1,    "name": "agetty",           "user": "root",      "state": "Ss",  "start_time": "2025-08-09T00:48:18Z", "threads": 1,  "virt_kb": 14896,  "res_kb": 860   },
+    { "pid": 611,  "ppid": 1,    "name": "gdm3",             "user": "root",      "state": "Ssl", "start_time": "2025-08-09T00:48:19Z", "threads": 3,  "virt_kb": 140444, "res_kb": 17340 },
+    { "pid": 741,  "ppid": 611,  "name": "gdm-session-worker","user": "root",     "state": "Sl",  "start_time": "2025-08-09T00:48:20Z", "threads": 2,  "virt_kb": 68004,  "res_kb": 13288 },
+    { "pid": 812,  "ppid": 741,  "name": "systemd",          "user": "jhalpern",  "state": "Ss",  "start_time": "2025-08-09T00:48:22Z", "threads": 1,  "virt_kb": 22156,  "res_kb": 8924  },
+    { "pid": 813,  "ppid": 812,  "name": "sd-pam",           "user": "jhalpern",  "state": "S",   "start_time": "2025-08-09T00:48:22Z", "threads": 1,  "virt_kb": 105128, "res_kb": 3240  },
+    { "pid": 919,  "ppid": 812,  "name": "gnome-shell",      "user": "jhalpern",  "state": "Sl",  "start_time": "2025-08-09T00:48:28Z", "threads": 6,  "virt_kb": 305144, "res_kb": 18920 },
+    { "pid": 1102, "ppid": 812,  "name": "gnome-terminal-server","user": "jhalpern","state": "Sl","start_time": "2025-08-09T00:50:11Z", "threads": 3,  "virt_kb": 68400,  "res_kb": 11248 },
+    { "pid": 1241, "ppid": 1102, "name": "bash",             "user": "jhalpern",  "state": "Ss",  "start_time": "2025-08-09T00:50:14Z", "threads": 1,  "virt_kb": 9136,   "res_kb": 5648  },
+    { "pid": 1339, "ppid": 1241, "name": "python3",          "user": "jhalpern",  "state": "S",   "start_time": "2025-08-09T00:51:22Z", "threads": 2,  "virt_kb": 31560,  "res_kb": 11028, "cmdline": "python3 /opt/nexus/support/monitor.py" },
+    { "pid": 1401, "ppid": 1241, "name": "tail",             "user": "jhalpern",  "state": "S",   "start_time": "2025-08-09T00:52:04Z", "threads": 1,  "virt_kb": 12344,  "res_kb": 2048,  "cmdline": "tail -f /var/log/nexus/aurelia_support.log" },
+    { "pid": 2210, "ppid": 1241, "name": "vim",              "user": "jhalpern",  "state": "S",   "start_time": "2025-08-09T09:14:44Z", "threads": 1,  "virt_kb": 8180,   "res_kb": 1124,  "cmdline": "vim /home/jhalpern/notes/maintenance_log.txt" },
+    { "pid": 2714, "ppid": 1,    "name": "NetworkManager",   "user": "root",      "state": "Ssl", "start_time": "2025-08-09T00:48:31Z", "threads": 4,  "virt_kb": 312400, "res_kb": 20448 },
+    { "pid": 2894, "ppid": 1,    "name": "cron",             "user": "root",      "state": "Ss",  "start_time": "2025-08-09T00:48:33Z", "threads": 1,  "virt_kb": 9036,   "res_kb": 1348  },
+    { "pid": 3114, "ppid": 1,    "name": "sshd",             "user": "root",      "state": "Ss",  "start_time": "2025-08-09T00:48:40Z", "threads": 1,  "virt_kb": 73020,  "res_kb": 9440  },
+    { "pid": 3201, "ppid": 3114, "name": "sshd",             "user": "root",      "state": "Ss",  "start_time": "2025-08-10T03:10:04Z", "threads": 1,  "virt_kb": 73020,  "res_kb": 9440  },
+    { "pid": 3202, "ppid": 3201, "name": "sshd",             "user": "jhalpern",  "state": "S",   "start_time": "2025-08-10T03:10:04Z", "threads": 1,  "virt_kb": 73020,  "res_kb": 4560  },
+    { "pid": 3203, "ppid": 3202, "name": "bash",             "user": "jhalpern",  "state": "Ss",  "start_time": "2025-08-10T03:10:04Z", "threads": 1,  "virt_kb": 9136,   "res_kb": 5520  },
+    { "pid": 3441, "ppid": 3203, "name": "python3",          "user": "jhalpern",  "state": "S",   "start_time": "2025-08-10T03:12:09Z", "threads": 2,  "virt_kb": 27440,  "res_kb": 3200,  "cmdline": "python3 /opt/nexus/support/archive_sync.py --mode verify" },
+    { "pid": 3847, "ppid": 1241, "name": "aurelia-diag",     "user": "root",      "state": "S",   "start_time": "2025-08-10T03:17:41Z", "threads": 2,  "virt_kb": 54320,  "res_kb": 26440, "cmdline": "aurelia-diag --export --silent --token-file /etc/.nexus_token" },
+    { "pid": 3980, "ppid": 3114, "name": "sshd",             "user": "root",      "state": "Ss",  "start_time": "2025-08-10T03:19:12Z", "threads": 1,  "virt_kb": 73020,  "res_kb": 9124  }
+  ],
+  "pstree": {
+    "pid": 1, "name": "systemd", "children": [
+      { "pid": 213,  "name": "systemd-journald", "children": [] },
+      { "pid": 241,  "name": "systemd-udevd",    "children": [] },
+      { "pid": 447,  "name": "rsyslogd",          "children": [] },
+      { "pid": 611,  "name": "gdm3",              "children": [
+        { "pid": 741, "name": "gdm-session-worker", "children": [
+          { "pid": 812, "name": "systemd (jhalpern)", "children": [
+            { "pid": 813,  "name": "sd-pam",   "children": [] },
+            { "pid": 919,  "name": "gnome-shell", "children": [] },
+            { "pid": 1102, "name": "gnome-terminal-server", "children": [
+              { "pid": 1241, "name": "bash (jhalpern, pts/0)", "children": [
+                { "pid": 1339, "name": "python3 [monitor.py]",   "children": [] },
+                { "pid": 1401, "name": "tail",                    "children": [] },
+                { "pid": 2210, "name": "vim",                     "children": [] },
+                { "pid": 3847, "name": "aurelia-diag [ROOT]",     "children": [],
+                  "_anomaly": "Root process spawned from user interactive shell. aurelia-diag is not a registered NEXUS service." }
+              ]}
+            ]}
+          ]}
+        ]}
+      ]},
+      { "pid": 2714, "name": "NetworkManager", "children": [] },
+      { "pid": 2894, "name": "cron",           "children": [] },
+      { "pid": 3114, "name": "sshd",           "children": [
+        { "pid": 3201, "name": "sshd (jhalpern priv)", "children": [
+          { "pid": 3202, "name": "sshd (jhalpern)", "children": [
+            { "pid": 3203, "name": "bash (jhalpern, pts/1)", "children": [
+              { "pid": 3441, "name": "python3 [archive_sync.py]", "children": [] }
+            ]}
+          ]}
+        ]},
+        { "pid": 3980, "name": "sshd (root priv)", "children": [] }
+      ]}
+    ]
+  },
+  "netscan": [
+    { "pid": 1339, "name": "python3",      "proto": "TCP", "local_addr": "10.0.4.7:41204", "remote_addr": "aurelia-core.nexus.local:8443", "state": "ESTABLISHED" },
+    { "pid": 3201, "name": "sshd",         "proto": "TCP", "local_addr": "10.0.4.7:22",    "remote_addr": "10.0.4.1:52441",               "state": "ESTABLISHED" },
+    { "pid": 3441, "name": "python3",      "proto": "TCP", "local_addr": "10.0.4.7:41820", "remote_addr": "archive.nexus.local:443",       "state": "CLOSE_WAIT"  },
+    { "pid": 3847, "name": "aurelia-diag", "proto": "TCP", "local_addr": "10.0.4.7:54122", "remote_addr": "198.51.100.47:4444",            "state": "ESTABLISHED",
+      "_note": "198.51.100.47 is not a registered NEXUS host. Port 4444 is commonly associated with reverse shells." },
+    { "pid": 3980, "name": "sshd",         "proto": "TCP", "local_addr": "10.0.4.7:22",    "remote_addr": "198.51.100.47:39412",           "state": "ESTABLISHED",
+      "_note": "Inbound SSH from same external host as PID 3847 outbound connection." }
+  ],
+  "modules": [
+    { "pid": 1339, "name": "python3",      "modules": ["libc.so.6", "libpthread.so.0", "libm.so.6", "libz.so.1", "libssl.so.1.1"] },
+    { "pid": 3441, "name": "python3",      "modules": ["libc.so.6", "libpthread.so.0", "libm.so.6", "libz.so.1", "libssl.so.1.1"] },
+    { "pid": 3847, "name": "aurelia-diag", "modules": ["libc.so.6", "libpthread.so.0", "libssl.so.1.1", "libshadow_hook.so.1", "libcurl.so.4"],
+      "_note": "libshadow_hook.so.1 is not part of any registered NEXUS software package. Hash unknown." }
+  ],
+  "string_regions": [
+    {
+      "pid": 1339,
+      "name": "python3",
+      "region": "heap",
+      "strings": [
+        "aurelia-core.nexus.local",
+        "AURELIA CORE status: DEGRADED",
+        "Heartbeat FAILED",
+        "/opt/nexus/support/monitor.py",
+        "session_reconnect_attempt"
+      ]
+    },
+    {
+      "pid": 3441,
+      "name": "python3",
+      "region": "heap",
+      "strings": [
+        "archive.nexus.local",
+        "echo-legacy",
+        "/opt/nexus/support/archive_sync.py",
+        "verify mode",
+        "SES-4471-A",
+        "sync_complete: 0 files updated"
+      ]
+    },
+    {
+      "pid": 3847,
+      "name": "aurelia-diag",
+      "region": "stack",
+      "strings": [
+        "/etc/.nexus_token",
+        "http://core-internal.nexus.local/diag/export",
+        "X-Debug-Token",
+        "export_complete",
+        "/tmp/.d"
+      ]
+    },
+    {
+      "pid": 3847,
+      "name": "aurelia-diag",
+      "region": "heap",
+      "strings": [
+        "aurelia-diag v0.9-dev",
+        "libshadow_hook.so.1",
+        "GHOST_BEACON_V1|node=WS-AURELIA-07|key=ZmxhZ3tHaG9zdF9CZWFjb25fTWVtb3J5X1Jlc2lkZW50fQ==",
+        "beacon_interval=300",
+        "c2_host=198.51.100.47",
+        "c2_port=4444",
+        "beacon_sent_ok"
+      ]
+    },
+    {
+      "pid": 3847,
+      "name": "aurelia-diag",
+      "region": "mmap:/tmp/.d",
+      "strings": [
+        "{",
+        "source: nexus-diag-export",
+        "node: WS-AURELIA-07",
+        "timestamp: 2025-08-10T03:17:52Z",
+        "token: ZmxhZ3tHaG9zdF9GaXJzdF9Gb290cHJpbnR9",
+        "status: export_complete",
+        "}"
+      ]
+    }
+  ]
+}

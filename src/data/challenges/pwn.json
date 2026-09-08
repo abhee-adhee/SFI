@@ -1,0 +1,100 @@
+[
+  {
+    "id": "PWN-01",
+    "category": "pwn",
+    "difficulty": "beginner",
+    "title": "BROKEN TERMINAL",
+    "objective": "Exploit a stack buffer overflow vulnerability in broken_terminal to overwrite the return address and execute win().",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 25,
+    "entities": [
+      "EMP-007"
+    ],
+    "storyEvents": [
+      "TL-001"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/pwn/PWN-01/broken_terminal",
+      "/artifacts/challenges/pwn/PWN-01/README.txt"
+    ],
+    "technicalMechanism": "The process_terminal function uses gets() to read into a 64-byte buffer. Overwriting 72 bytes (64 buffer + 8 saved rbp) allows controlling RIP and redirecting control flow to win().",
+    "hintLevels": [
+      "Use objdump or GDB to inspect broken_terminal. Locate the win() function address and calculate the buffer offset in process_terminal.",
+      "The input buffer size is 64 bytes. Adding 8 bytes for saved RBP requires a 72-byte offset before overwriting the return address.",
+      "Construct a payload of 72 'A' bytes followed by the 64-bit little-endian address of win() to trigger flag output."
+    ],
+    "interactive": true,
+    "points": 100
+  },
+  {
+    "id": "PWN-02",
+    "category": "pwn",
+    "difficulty": "intermediate",
+    "title": "INTERNAL SERVICE",
+    "objective": "Exploit a format string vulnerability to leak the secret authorization token from the stack.",
+    "prerequisites": [],
+    "dependencies": [
+      "PWN-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 35,
+    "entities": [
+      "EMP-005"
+    ],
+    "storyEvents": [
+      "TL-002"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/pwn/PWN-02/internal_service",
+      "/artifacts/challenges/pwn/PWN-02/README.txt"
+    ],
+    "technicalMechanism": "The main function prints user input directly using printf(input). Supplying format specifiers like %5$lx leaks secret_token from stack slot 5, which can then be submitted to unlock grant_access().",
+    "hintLevels": [
+      "Test user input with format specifiers like %p or %x. Notice that the program prints stack memory directly back to the terminal.",
+      "Locate the stack position of secret_token using specifiers like %5$lx or %6$lx.",
+      "Submit %5$lx as operator ID to leak the hex token 0xA02E11A99, then enter that token at the secret prompt."
+    ],
+    "interactive": true,
+    "points": 200
+  },
+  {
+    "id": "PWN-03",
+    "category": "pwn",
+    "difficulty": "hard",
+    "title": "AURELIA GATEWAY",
+    "objective": "Exploit an unbounded read stack overflow in aurelia_gateway to execute win(0xDEADBEEF, 0xCAFEBABE).",
+    "prerequisites": [],
+    "dependencies": [
+      "PWN-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 45,
+    "entities": [
+      "EMP-001",
+      "PRJ-AURELIA"
+    ],
+    "storyEvents": [
+      "TL-005"
+    ],
+    "artifactPaths": [
+      "/artifacts/challenges/pwn/PWN-03/aurelia_gateway",
+      "/artifacts/challenges/pwn/PWN-03/README.txt"
+    ],
+    "technicalMechanism": "The gateway_service function reads 256 bytes into a 64-byte stack buffer using fread. Solvers construct a ROP chain or argument payload targeting win(0xDEADBEEF, 0xCAFEBABE).",
+    "hintLevels": [
+      "Analyze gateway_service in GDB or Ghidra. Note the win() address leaked in output and the 256-byte fread call into a 64-byte buffer.",
+      "Locate ROP gadgets (or set RDI=0xDEADBEEF and RSI=0xCAFEBABE) to pass the argument check in win().",
+      "Send 72 bytes padding followed by the address of win() with valid parameter registers to bypass the gateway check."
+    ],
+    "interactive": true,
+    "points": 300
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "CRY-01",
+    "category": "crypto",
+    "difficulty": "beginner",
+    "title": "CRYPTO Challenge 1",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in crypto.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for CRY-01",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 100
+  },
+  {
+    "id": "CRY-02",
+    "category": "crypto",
+    "difficulty": "intermediate",
+    "title": "CRYPTO Challenge 2",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in crypto.",
+    "prerequisites": [],
+    "dependencies": [
+      "CRY-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for CRY-02",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 200
+  },
+  {
+    "id": "CRY-03",
+    "category": "crypto",
+    "difficulty": "intermediate",
+    "title": "CRYPTO Challenge 3",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in crypto.",
+    "prerequisites": [],
+    "dependencies": [
+      "CRY-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for CRY-03",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 300
+  },
+  {
+    "id": "CRY-04",
+    "category": "crypto",
+    "difficulty": "hard",
+    "title": "CRYPTO Challenge 4",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in crypto.",
+    "prerequisites": [],
+    "dependencies": [
+      "CRY-03"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for CRY-04",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 400
+  }
+]

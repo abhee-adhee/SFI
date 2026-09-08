@@ -1,0 +1,19 @@
+visit_time_utc,url,title,visit_count,typed_count,transition
+2025-08-09 22:47:11,https://intranet.nexus.local/dashboard,NEXUS Intranet Dashboard,1,1,TYPED
+2025-08-09 22:48:04,https://intranet.nexus.local/helpdesk/tickets,Help Desk — Open Tickets,3,0,LINK
+2025-08-09 22:51:33,https://intranet.nexus.local/helpdesk/tickets/TKT-2025-0881,Ticket #2025-0881 — Archive Access Request,2,0,LINK
+2025-08-09 22:55:19,https://intranet.nexus.local/wiki/SYS-ARCHIVE,SYS-ARCHIVE — Cold Storage Documentation,4,0,LINK
+2025-08-09 23:01:44,https://intranet.nexus.local/wiki/aurelia-diag-tool,AURELIA Diagnostic Tool — Internal Reference,2,1,TYPED
+2025-08-09 23:04:02,https://intranet.nexus.local/wiki/aurelia-diag-tool,AURELIA Diagnostic Tool — Internal Reference,1,0,RELOAD
+2025-08-09 23:07:55,https://intranet.nexus.local/employee/EMP-001,Dr. Evelyn Vance — Employee Profile,1,0,LINK
+2025-08-09 23:09:12,https://intranet.nexus.local/employee/EMP-005,Dr. Arthur Penhaligon — Employee Profile,1,0,LINK
+2025-08-09 23:14:40,https://intranet.nexus.local/projects/PRJ-ECHO,Project ECHO — Research Summary,3,0,LINK
+2025-08-09 23:22:07,https://intranet.nexus.local/projects/PRJ-ECHO,Project ECHO — Research Summary,1,0,RELOAD
+2025-08-10 00:01:22,https://intranet.nexus.local/dashboard,NEXUS Intranet Dashboard,1,1,TYPED
+2025-08-10 00:44:18,https://docs.nexus.local/api/diag-export,Diagnostic Export API Reference,2,1,TYPED
+2025-08-10 00:51:09,https://docs.nexus.local/api/diag-export,Diagnostic Export API Reference,1,0,RELOAD
+2025-08-10 02:33:14,https://intranet.nexus.local/dashboard,NEXUS Intranet Dashboard,1,1,TYPED
+2025-08-10 02:40:09,https://docs.nexus.local/api/internal-endpoints,Internal Endpoint Reference,1,1,TYPED
+2025-08-10 03:08:22,https://archive.nexus.local/browse/echo-legacy,echo-legacy Repository — Browse,2,1,TYPED
+2025-08-10 03:09:44,https://archive.nexus.local/browse/echo-legacy/ECHO-FINAL.dat,ECHO-FINAL.dat — View,1,0,LINK
+2025-08-10 03:14:01,https://intranet.nexus.local/dashboard,NEXUS Intranet Dashboard,1,0,TYPED

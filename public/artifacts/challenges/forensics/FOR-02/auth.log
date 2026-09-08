@@ -1,0 +1,11 @@
+2025-08-10 03:00:02 [AUTH] user=david.aris src_ip=10.0.1.5 method=CERT result=SUCCESS session=SES-4418-B
+2025-08-10 03:01:58 [AUTH] sudo: jhalpern : TTY=pts/0 ; PWD=/home/jhalpern ; USER=root ; COMMAND=/bin/cat /etc/.nexus_token
+2025-08-10 03:02:07 [AUTH] user=sarah.ockham src_ip=10.0.2.3 method=TOTP result=SUCCESS session=SES-4450-C
+2025-08-10 03:04:33 [AUTH] sudo: jhalpern : TTY=pts/0 ; PWD=/home/jhalpern ; USER=root ; COMMAND=/usr/local/bin/aurelia-diag --export --silent --token-file /etc/.nexus_token
+2025-08-10 03:09:55 [AUTH] PAM_AUTH sshd[3201]: session opened for user jhalpern by (uid=0) src=10.0.4.1
+2025-08-10 03:10:01 [AUTH] PAM_AUTH sshd[3201]: session opened for user jhalpern by (uid=0) src=10.0.4.1
+2025-08-10 03:12:01 [AUTH] user=elena.rostova src_ip=10.0.3.2 method=TOTP result=SUCCESS session=SES-4471-A
+2025-08-10 03:15:09 [AUTHZ] session=SES-4471-A user=elena.rostova resource=archive://SYS-ARCHIVE/echo-legacy/ clearance=SECURITY result=GRANTED
+2025-08-10 03:15:44 [AUTHZ] session=SES-4471-A user=elena.rostova resource=archive://SYS-ARCHIVE/echo-legacy/ECHO-FINAL.dat clearance=SECURITY result=DENIED reason=REQUIRES_ADMIN_CLEARANCE
+2025-08-10 03:17:55 [AUTH] sudo: jhalpern : TTY=pts/0 ; PWD=/tmp ; USER=root ; COMMAND=/bin/curl -s http://core-internal.nexus.local/diag/export -H X-Debug-Token: [REDACTED] -o /tmp/.d
+2025-08-10 03:22:11 [AUTH] PAM_AUTH sshd[3980]: session opened for user root by (uid=0) src=198.51.100.47

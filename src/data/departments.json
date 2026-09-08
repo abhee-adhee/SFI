@@ -1,0 +1,22 @@
+[
+  {
+    "id": "DEPT-AI",
+    "name": "Applied AI",
+    "headId": "EMP-001"
+  },
+  {
+    "id": "DEPT-SYS",
+    "name": "Core Systems",
+    "headId": "EMP-002"
+  },
+  {
+    "id": "DEPT-SEC",
+    "name": "Information Security",
+    "headId": "EMP-004"
+  },
+  {
+    "id": "DEPT-RES",
+    "name": "Advanced Research",
+    "headId": "EMP-005"
+  }
+]

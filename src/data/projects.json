@@ -1,0 +1,51 @@
+[
+  {
+    "id": "PRJ-AURELIA",
+    "name": "AURELIA Core",
+    "status": "ACTIVE",
+    "leadId": "EMP-001",
+    "repoId": "REPO-AURELIA-CORE"
+  },
+  {
+    "id": "PRJ-COGNITION",
+    "name": "Recursive Cognition",
+    "status": "ACTIVE",
+    "leadId": "EMP-001",
+    "repoId": "REPO-COG-MODELS"
+  },
+  {
+    "id": "PRJ-INFRA-NET",
+    "name": "Global Nexus Grid",
+    "status": "ACTIVE",
+    "leadId": "EMP-002",
+    "repoId": "REPO-INFRA"
+  },
+  {
+    "id": "PRJ-MEM-ALLOC",
+    "name": "Dynamic Memory Allocator",
+    "status": "ACTIVE",
+    "leadId": "EMP-003",
+    "repoId": "REPO-MEM"
+  },
+  {
+    "id": "PRJ-ZERO-TRUST",
+    "name": "Zero-Trust Protocol",
+    "status": "ACTIVE",
+    "leadId": "EMP-004",
+    "repoId": "REPO-SEC-PROTO"
+  },
+  {
+    "id": "PRJ-ECHO",
+    "name": "Project ECHO",
+    "status": "ARCHIVED",
+    "leadId": "EMP-005",
+    "repoId": "REPO-ECHO"
+  },
+  {
+    "id": "PRJ-ARCHIVE",
+    "name": "System Archives",
+    "status": "MAINTENANCE",
+    "leadId": "EMP-007",
+    "repoId": "REPO-ARCHIVE"
+  }
+]

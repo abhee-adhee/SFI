@@ -1,0 +1,20 @@
+[
+  {
+    "id": "SYS-AURELIA",
+    "name": "AURELIA CORE",
+    "status": "OPERATIONAL",
+    "region": "GLOBAL"
+  },
+  {
+    "id": "SYS-GRID",
+    "name": "NEXUS GRID",
+    "status": "OPERATIONAL",
+    "region": "GLOBAL"
+  },
+  {
+    "id": "SYS-ARCHIVE",
+    "name": "COLD STORAGE ARCHIVE",
+    "status": "RESTRICTED",
+    "region": "OFF-SITE"
+  }
+]

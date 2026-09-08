@@ -1,0 +1,85 @@
+================================================================================
+NEXUS DYNAMICS — SECURITY DIVISION
+INCIDENT REPORT: INC-2025-01
+CLASSIFICATION: INTERNAL — CONFIDENTIAL
+PREPARED BY: D. Aris, Chief Security Officer (EMP-004)
+REVIEWED BY: M. Chen, VP Core Systems (EMP-002)
+DATE ISSUED: 2025-08-12
+================================================================================
+
+EXECUTIVE SUMMARY
+
+On 2025-08-10, NEXUS Security identified a minor anomaly in the routing logic
+of the NEXUS GRID (SYS-GRID). The anomaly caused a brief disruption to packet
+routing in the EU-West datacenter zone. No sensitive data was accessed.
+No unauthorized users gained access to NEXUS systems.
+
+The incident was contained through automatic Zero-Trust protocol enforcement
+and manual review by the Security team.
+
+NEXUS operations returned to normal within 30 minutes of detection.
+
+--------------------------------------------------------------------------------
+
+TIMELINE OF EVENTS
+
+  04:30:00 UTC — Anomaly first detected by automated monitoring.
+                 AURELIA GRID module flagged an unexpected routing deviation
+                 in dc-europe.nexus.local.
+
+  04:32:00 UTC — Security team (E. Rostova) notified via PagerDuty alert.
+                 Initial assessment: packet routing misconfiguration.
+
+  04:35:00 UTC — Zero-Trust enforcement activated on SYS-GRID perimeter.
+                 Affected routing tables isolated.
+
+  04:40:00 UTC — D. Aris (CSO) notified. Incident escalated to P2.
+
+  04:45:00 UTC — Routing tables restored. NEXUS GRID returned to OPERATIONAL.
+                 No data exfiltration detected.
+
+  04:48:00 UTC — E. Rostova confirmed: anomaly limited to dc-europe.nexus.local
+                 routing segment. No AURELIA CORE impact.
+
+  04:55:00 UTC — INC-2025-01 declared contained. Post-incident review scheduled.
+
+--------------------------------------------------------------------------------
+
+ROOT CAUSE
+
+Routing configuration drift in dc-europe.nexus.local caused by an
+untracked maintenance operation on SYS-GRID.
+No malicious actor identified.
+Root cause assigned to: configuration management gap.
+
+--------------------------------------------------------------------------------
+
+AFFECTED SYSTEMS
+
+  SYS-GRID — NEXUS GRID (EU-West routing segment)
+
+SYSTEMS NOT AFFECTED:
+
+  SYS-AURELIA — AURELIA CORE (confirmed OPERATIONAL throughout)
+  SYS-ARCHIVE — Cold Storage Archive (no access recorded)
+
+--------------------------------------------------------------------------------
+
+ACTIONS TAKEN
+
+  - Zero-Trust enforcement activated on SYS-GRID perimeter
+  - Routing tables audited and restored
+  - Configuration management review initiated
+  - No further action required
+
+--------------------------------------------------------------------------------
+
+CONCLUSION
+
+INC-2025-01 was a minor routing anomaly caused by configuration drift.
+No unauthorized access occurred. No sensitive data was accessed or exfiltrated.
+NEXUS systems are OPERATIONAL. No further escalation required.
+
+================================================================================
+DOCUMENT END — NEXUS DYNAMICS INTERNAL USE ONLY
+================================================================================

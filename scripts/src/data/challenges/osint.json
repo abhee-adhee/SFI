@@ -1,0 +1,104 @@
+[
+  {
+    "id": "OSINT-01",
+    "category": "osint",
+    "difficulty": "beginner",
+    "title": "OSINT Challenge 1",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in osint.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for OSINT-01",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 100
+  },
+  {
+    "id": "OSINT-02",
+    "category": "osint",
+    "difficulty": "intermediate",
+    "title": "OSINT Challenge 2",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in osint.",
+    "prerequisites": [],
+    "dependencies": [
+      "OSINT-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for OSINT-02",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 200
+  },
+  {
+    "id": "OSINT-03",
+    "category": "osint",
+    "difficulty": "intermediate",
+    "title": "OSINT Challenge 3",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in osint.",
+    "prerequisites": [],
+    "dependencies": [
+      "OSINT-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for OSINT-03",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 300
+  },
+  {
+    "id": "OSINT-04",
+    "category": "osint",
+    "difficulty": "hard",
+    "title": "OSINT Challenge 4",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in osint.",
+    "prerequisites": [],
+    "dependencies": [
+      "OSINT-03"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for OSINT-04",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": false,
+    "points": 400
+  }
+]

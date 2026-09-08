@@ -1,0 +1,78 @@
+[
+  {
+    "id": "PWN-01",
+    "category": "pwn",
+    "difficulty": "beginner",
+    "title": "PWN Challenge 1",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in pwn.",
+    "prerequisites": [],
+    "dependencies": [],
+    "relationshipTypes": [
+      "entryPoint"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for PWN-01",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": true,
+    "points": 100
+  },
+  {
+    "id": "PWN-02",
+    "category": "pwn",
+    "difficulty": "intermediate",
+    "title": "PWN Challenge 2",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in pwn.",
+    "prerequisites": [],
+    "dependencies": [
+      "PWN-01"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for PWN-02",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": true,
+    "points": 200
+  },
+  {
+    "id": "PWN-03",
+    "category": "pwn",
+    "difficulty": "hard",
+    "title": "PWN Challenge 3",
+    "objective": "[PLACEHOLDER] Analyze and exploit the intended vulnerability in pwn.",
+    "prerequisites": [],
+    "dependencies": [
+      "PWN-02"
+    ],
+    "relationshipTypes": [
+      "softDependency"
+    ],
+    "estimatedMinutes": 30,
+    "entities": [],
+    "storyEvents": [],
+    "artifactPaths": [],
+    "technicalMechanism": "[PLACEHOLDER] Technical details for PWN-03",
+    "hintLevels": [
+      "Directional hint placeholder",
+      "Technical hint placeholder",
+      "Near-solution hint placeholder"
+    ],
+    "interactive": true,
+    "points": 300
+  }
+]

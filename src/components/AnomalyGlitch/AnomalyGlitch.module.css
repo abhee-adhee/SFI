@@ -1,0 +1,32 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-purple-dim);
+  pointer-events: none;
+  mix-blend-mode: exclusion;
+  z-index: 10;
+}
+
+.glitch-low {
+  transform: translate(2px, 1px);
+  filter: hue-rotate(90deg) saturate(150%);
+}
+
+.glitch-medium {
+  transform: translate(-3px, 2px) skewX(2deg);
+  filter: hue-rotate(180deg) saturate(200%) contrast(150%);
+}
+
+.glitch-high {
+  transform: translate(5px, -3px) skewX(-5deg);
+  filter: hue-rotate(270deg) saturate(300%) contrast(200%);
+  opacity: 0.8;
+}
