@@ -97,5 +97,148 @@
         "filesChanged": 5
       }
     ]
+  },
+  {
+    "id": "REPO-COG-MODELS",
+    "name": "recursive-cognition-models",
+    "description": "Reference models and evaluation harness for the Recursive Cognition program",
+    "ownerId": "EMP-001",
+    "isPublic": true,
+    "commits": [
+      {
+        "hash": "c0f1a22",
+        "author": "E. Vance",
+        "date": "2026-08-30",
+        "message": "Tighten recursion-depth guardrails on evaluation harness",
+        "filesChanged": 4
+      },
+      {
+        "hash": "b7d3e90",
+        "author": "E. Vance",
+        "date": "2026-05-12",
+        "message": "Add convergence metrics for bounded cognitive loops",
+        "filesChanged": 6
+      },
+      {
+        "hash": "a19c740",
+        "author": "SYSTEM",
+        "date": "2024-11-03",
+        "message": "Initial public release of reference models",
+        "filesChanged": 58
+      }
+    ]
+  },
+  {
+    "id": "REPO-INFRA",
+    "name": "nexus-grid-infra",
+    "description": "Infrastructure-as-code and routing topology for the Global Nexus Grid",
+    "ownerId": "EMP-002",
+    "isPublic": true,
+    "commits": [
+      {
+        "hash": "d5e6f71",
+        "author": "M. Chen",
+        "date": "2026-07-19",
+        "message": "Rebalance regional routing tables across 42 datacenters",
+        "filesChanged": 9
+      },
+      {
+        "hash": "e2a4b83",
+        "author": "M. Chen",
+        "date": "2025-09-02",
+        "message": "Enforce Zero-Trust boundary checks on inter-node links",
+        "filesChanged": 7
+      },
+      {
+        "hash": "f8c9d04",
+        "author": "SYSTEM",
+        "date": "2023-04-18",
+        "message": "Bootstrap grid provisioning manifests",
+        "filesChanged": 61
+      }
+    ]
+  },
+  {
+    "id": "REPO-MEM",
+    "name": "dynamic-memory-allocator",
+    "description": "Allocator and diagnostics for AURELIA memory management",
+    "ownerId": "EMP-003",
+    "isPublic": true,
+    "commits": [
+      {
+        "hash": "1a2b3c4",
+        "author": "S. Ockham",
+        "date": "2026-02-16",
+        "message": "Add instrumentation for anomalous allocation in sector 7G",
+        "filesChanged": 3
+      },
+      {
+        "hash": "2b3c4d5",
+        "author": "S. Ockham",
+        "date": "2026-02-10",
+        "message": "Reserve-block accounting: flag allocations with no mapped owner process",
+        "filesChanged": 5
+      },
+      {
+        "hash": "3c4d5e6",
+        "author": "SYSTEM",
+        "date": "2025-06-01",
+        "message": "Initial allocator diagnostics module",
+        "filesChanged": 44
+      }
+    ]
+  },
+  {
+    "id": "REPO-SEC-PROTO",
+    "name": "zero-trust-protocol",
+    "description": "Reference implementation of the NEXUS Zero-Trust boundary protocol",
+    "ownerId": "EMP-004",
+    "isPublic": true,
+    "commits": [
+      {
+        "hash": "4d5e6f7",
+        "author": "D. Aris",
+        "date": "2026-06-25",
+        "message": "Rotate node attestation keys; deprecate implicit-trust fallback",
+        "filesChanged": 8
+      },
+      {
+        "hash": "5e6f7a8",
+        "author": "E. Rostova",
+        "date": "2025-11-14",
+        "message": "Add anomaly-detection hooks to boundary validator",
+        "filesChanged": 6
+      },
+      {
+        "hash": "6f7a8b9",
+        "author": "D. Aris",
+        "date": "2023-01-09",
+        "message": "Initial protocol specification and validator",
+        "filesChanged": 37
+      }
+    ]
+  },
+  {
+    "id": "REPO-ARCHIVE",
+    "name": "system-archives",
+    "description": "Cold-storage index and retention tooling for decommissioned subsystems",
+    "ownerId": "EMP-007",
+    "isPublic": false,
+    "commits": [
+      {
+        "hash": "7a8b9c0",
+        "author": "J.T. Halpern",
+        "date": "2025-03-30",
+        "message": "Migrate suspended-project assets to off-site cold storage",
+        "filesChanged": 12
+      },
+      {
+        "hash": "8b9c0d1",
+        "author": "J.T. Halpern",
+        "date": "2019-01-22",
+        "message": "Seal legacy retention manifests; restrict archive access",
+        "filesChanged": 3
+      }
+    ]
   }
 ]

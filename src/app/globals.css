@@ -11,6 +11,8 @@
   --color-acid-green-dim: rgba(204, 255, 0, 0.2);
   --color-purple: #7a00ff;
   --color-purple-dim: rgba(122, 0, 255, 0.2);
+  --color-critical-red: #ff453a;
+  --color-bg-darker: #020202;
 
   --font-display: 'Oswald', sans-serif;
   --font-sans: 'Inter', sans-serif;

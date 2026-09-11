@@ -7,9 +7,7 @@ export async function GET() {
     system: 'AURELIA_CORE_ENGINE',
     diagnostic_interface: '/aurelia/core',
     active_component: 'AURELIA-CORE-V4',
-    last_incident_timestamp: '2025-10-14T08:00:00Z',
-    required_state_token_format: '32-byte SHA256 hex string',
-    diagnostic_tool_artifact: '/artifacts/challenges/bosses/BOSS-01/core_diagnostic'
+    required_state_token_format: '32-byte SHA256 hex string'
   });
 }
 
@@ -22,8 +20,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         status: 'READY',
         system: 'AURELIA_CORE_ENGINE',
-        module_id: 'AURELIA-CORE-V4',
-        timestamp: '2025-10-14T08:00:00Z'
+        module_id: 'AURELIA-CORE-V4'
       });
     }
 

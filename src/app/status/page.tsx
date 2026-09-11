@@ -1,5 +1,7 @@
 'use client';
 import Navigation from '@/components/Navigation/Navigation';
+import Footer from '@/components/Footer/Footer';
+import Link from 'next/link';
 import styles from '../shared.module.css';
 import SystemStatus from '@/components/SystemStatus/SystemStatus';
 import AnomalyGlitch from '@/components/AnomalyGlitch/AnomalyGlitch';
@@ -48,7 +50,46 @@ export default function StatusPage() {
             ))}
           </ul>
         </div>
+
+        <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--color-gray-dark)' }}>
+          <h2 style={{ color: 'var(--color-pure-white)', marginBottom: '1rem' }}>STATUS API</h2>
+          <p style={{ color: 'var(--color-gray-light)', fontSize: '0.9375rem', maxWidth: '760px', lineHeight: 1.7 }}>
+            This dashboard is rendered from the public status service. Integrators can poll the same
+            endpoint directly for machine-readable health data. Each response carries an{' '}
+            <code style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-acid-green)' }}>X-Diagnostic-Mode</code>{' '}
+            header describing the current reporting level.
+          </p>
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8125rem', marginTop: '1rem' }}>
+            <span style={{ color: 'var(--color-acid-green)', marginRight: '0.75rem' }}>GET</span>
+            <a href="/api/v1/status" style={{ color: 'var(--color-white)', borderBottom: '1px dashed var(--color-gray)' }}>
+              /api/v1/status
+            </a>
+          </p>
+          <p style={{ marginTop: '1rem', fontSize: '0.875rem' }}>
+            <Link href="/developers#status" style={{ color: 'var(--color-gray-light)', borderBottom: '1px dashed var(--color-gray)' }}>
+              View in API reference →
+            </Link>
+          </p>
+        </div>
+
+        <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--color-gray-dark)' }}>
+          <h2 style={{ color: 'var(--color-pure-white)', marginBottom: '0.75rem' }}>RESTRICTED DIAGNOSTICS</h2>
+          <p style={{ color: 'var(--color-gray-light)', fontSize: '0.875rem', marginBottom: '1rem', maxWidth: '760px' }}>
+            Deep telemetry and internal diagnostics are access-controlled. Operators with the appropriate
+            division authorization can reach the internal consoles below.
+          </p>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <Link href="/network" className={styles.restrictedLink}>
+              <span className={styles.restrictedLock}>◈</span> Global Grid Diagnostics · DEPT-SYS
+            </Link>
+            <Link href="/system" className={styles.restrictedLink}>
+              <span className={styles.restrictedLock}>◈</span> Internal System Console · RESTRICTED
+            </Link>
+          </div>
+        </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

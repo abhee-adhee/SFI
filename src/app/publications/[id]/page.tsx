@@ -1,6 +1,8 @@
 import Navigation from '@/components/Navigation/Navigation';
+import Footer from '@/components/Footer/Footer';
 import styles from '../../shared.module.css';
 import publications from '@/data/publications.json';
+import characters from '@/data/characters.json';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
@@ -10,22 +12,31 @@ export function generateStaticParams() {
   }));
 }
 
-export default function PublicationDetail({ params }: { params: { id: string } }) {
-  const pub = publications.find((p) => p.id === params.id);
+export default async function PublicationDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const pub = publications.find((p) => p.id === id);
 
   if (!pub) {
     notFound();
   }
 
+  const author = characters.find((c) => c.id === pub.authorId);
+  const moreByAuthor = publications.filter(
+    (p) => p.authorId === pub.authorId && p.id !== pub.id
+  );
+
   return (
     <div className={styles.page}>
       <Navigation />
-      
+
       <main className={styles.main}>
         <div className={styles.header}>
           <h1 className={styles.title}>{pub.title}</h1>
           <div className={styles.subtitle}>
-            DATE: {pub.date} | AUTHOR: <Link href={`/employees/${pub.authorId}`} className={styles.link}>{pub.authorId}</Link>
+            {pub.id} {"//"} {pub.date} {"//"} AUTHOR:{' '}
+            <Link href={`/employees/${pub.authorId}`} className={styles.link}>
+              {author ? author.name : pub.authorId}
+            </Link>
           </div>
         </div>
 
@@ -42,12 +53,23 @@ export default function PublicationDetail({ params }: { params: { id: string } }
             </div>
           )}
         </div>
+
+        {moreByAuthor.length > 0 && (
+          <section className={styles.relatedSection}>
+            <h2 className={styles.relatedHeading}>More from this author</h2>
+            <ul className={styles.relatedList}>
+              {moreByAuthor.map((p) => (
+                <li key={p.id} className={styles.relatedItem}>
+                  <Link href={`/publications/${p.id}`} className={styles.link}>{p.title}</Link>
+                  <div className={styles.relatedItemMeta}>{p.id} · {p.date} · {p.status}</div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} NEXUS DYNAMICS. ALL RIGHTS RESERVED.</p>
-        <p>SYS.ID: ND-PUB-DETAIL</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation/Navigation';
+import Footer from '@/components/Footer/Footer';
 import styles from '../../shared.module.css';
 import advisories from '@/data/advisories.json';
 import Link from 'next/link';
@@ -27,10 +28,7 @@ export default function AdvisoriesPage() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} NEXUS DYNAMICS. ALL RIGHTS RESERVED.</p>
-        <p>SYS.ID: ND-SEC-ADV-LIST</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

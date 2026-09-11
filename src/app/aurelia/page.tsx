@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation/Navigation';
 import SystemStatus from '@/components/SystemStatus/SystemStatus';
 import AnomalyGlitch from '@/components/AnomalyGlitch/AnomalyGlitch';
 import Terminal from '@/components/Terminal/Terminal';
+import Link from 'next/link';
 import { useNarrative } from '@/context/NarrativeContext';
 import styles from './aurelia.module.css';
 
@@ -32,8 +33,28 @@ export default function AureliaPage() {
               Designed to optimize global infrastructure and process unparalleled datasets in real-time.
             </p>
             <p>
-              Current deployment spans 42 regional data centers with dynamic resource allocation and 
+              Current deployment spans 42 regional data centers with dynamic resource allocation and
               self-healing capabilities.
+            </p>
+            <p>
+              Every regional compute node streams a continuous health heartbeat to the platform{' '}
+              <Link
+                href="/developers#telemetry"
+                style={{ color: 'var(--color-acid-green)', borderBottom: '1px dashed var(--color-acid-green)' }}
+              >
+                telemetry ingest service
+              </Link>
+              .
+            </p>
+            <p>
+              Core services expose a restricted{' '}
+              <Link
+                href="/aurelia/core"
+                style={{ color: 'var(--color-acid-green)', borderBottom: '1px dashed var(--color-acid-green)' }}
+              >
+                diagnostic state layer
+              </Link>
+              {' '}for authorized integrity reconstruction.
             </p>
           </div>
           

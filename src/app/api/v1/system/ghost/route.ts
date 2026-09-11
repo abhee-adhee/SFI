@@ -21,8 +21,7 @@ export async function GET() {
         description: 'Web + Reverse Engineering + Misc Convergence',
         required_params: ['stream_magic', 'nxc_classified', 'lss_matrix']
       }
-    ],
-    verification_tool_artifact: '/artifacts/challenges/bosses/BOSS-02/ghost_handshake'
+    ]
   });
 }
 

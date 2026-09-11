@@ -1,0 +1,228 @@
+/*
+ * AURELIA Restricted Core — diagnostics console.
+ * Deliberately reads as an internal, locked-down engineering surface:
+ * classification strip, module lineage manifest, and a state-reconstruction
+ * verification terminal. No challenge chrome.
+ */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-darker);
+}
+
+.main {
+  flex: 1;
+  padding: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Classification / restricted-access strip */
+.classified {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--color-critical-red);
+  border: 1px solid var(--color-critical-red);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  opacity: 0.85;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-gray-dark);
+  padding-bottom: var(--spacing-lg);
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-pure-white);
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  color: var(--color-acid-green);
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+}
+
+.statusChip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--color-critical-red);
+  border: 1px solid var(--color-critical-red);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  white-space: nowrap;
+  align-self: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr; }
+  .headerRow { flex-direction: column; }
+}
+
+.panel {
+  border: 1px solid var(--color-gray-dark);
+  padding: var(--spacing-lg);
+  background-color: var(--color-black);
+}
+
+.panelTitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-pure-white);
+  border-bottom: 1px solid var(--color-gray-dark);
+  padding-bottom: var(--spacing-sm);
+}
+
+.para {
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+/* Core build lineage manifest — carries the ECHO -> Core provenance in-world */
+.lineage {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  border: 1px solid var(--color-gray-dark);
+  background-color: var(--color-bg-darker);
+  margin: var(--spacing-md) 0;
+}
+
+.lineageRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-dark);
+}
+
+.lineageRow:last-child { border-bottom: none; }
+
+.lineageId { color: var(--color-white); }
+
+.lineageCurrent .lineageId { color: var(--color-acid-green); }
+
+.lineageNote {
+  color: var(--color-gray);
+  text-align: right;
+}
+
+.inputLabel {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-gray-light);
+  letter-spacing: 0.05em;
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-bg-darker);
+  border: 1px solid var(--color-gray-dark);
+  color: var(--color-acid-green);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-acid-green);
+}
+
+.button {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: transparent;
+  border: 1px solid var(--color-acid-green);
+  color: var(--color-acid-green);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--color-acid-green);
+  color: var(--color-black);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.resultBox {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--color-bg-darker);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.resultOk { border: 1px solid var(--color-acid-green); }
+.resultFail { border: 1px solid var(--color-critical-red); }
+
+.resultLabelOk { color: var(--color-acid-green); }
+.resultLabelFail { color: var(--color-critical-red); }
+
+.sig {
+  color: var(--color-pure-white);
+  margin-top: var(--spacing-sm);
+  word-break: break-all;
+}
+
+/* Unresolved-anomaly referral (in-world path toward the deeper investigation) */
+.referral {
+  margin-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-gray-dark);
+  padding-top: var(--spacing-lg);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-gray);
+}
+
+.referralLink {
+  color: var(--color-gray-light);
+  border-bottom: 1px dashed var(--color-gray);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.referralLink:hover {
+  color: var(--color-acid-green);
+  border-color: var(--color-acid-green);
+}
+
+.footer {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-top: 1px solid var(--color-gray-dark);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-gray);
+}
+
+.sysId { color: var(--color-gray-light); }

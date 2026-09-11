@@ -1,0 +1,205 @@
+/*
+ * GHOST — system-level anomaly investigation console.
+ * The terminal surface of the investigation. Reads as an unresolved,
+ * actively-contained anomaly requiring multi-source evidence correlation.
+ * No conclusion is stated here; resolution is produced only on a valid handshake.
+ */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-darker);
+}
+
+.main {
+  flex: 1;
+  padding: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.classified {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--color-critical-red);
+  border: 1px solid var(--color-critical-red);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-gray-dark);
+  padding-bottom: var(--spacing-lg);
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-pure-white);
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  color: var(--color-purple);
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+}
+
+.statusChip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--color-critical-red);
+  border: 1px solid var(--color-critical-red);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  white-space: nowrap;
+  align-self: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr; }
+  .headerRow { flex-direction: column; }
+}
+
+.panel {
+  border: 1px solid var(--color-gray-dark);
+  padding: var(--spacing-lg);
+  background-color: var(--color-black);
+}
+
+.panelTitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-pure-white);
+  border-bottom: 1px solid var(--color-gray-dark);
+  padding-bottom: var(--spacing-sm);
+}
+
+.para {
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+/* Convergence route input contract — field names only, no values */
+.route {
+  border: 1px solid var(--color-gray-dark);
+  background-color: var(--color-bg-darker);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.routeName {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-purple);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.routeParams {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-gray);
+}
+
+.inputLabel {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-gray-light);
+  letter-spacing: 0.05em;
+}
+
+.select,
+.input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-bg-darker);
+  border: 1px solid var(--color-gray-dark);
+  color: var(--color-purple);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--color-purple);
+}
+
+.button {
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: transparent;
+  border: 1px solid var(--color-purple);
+  color: var(--color-purple);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--color-purple);
+  color: var(--color-pure-white);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.resultBox {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--color-bg-darker);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.resultOk { border: 1px solid var(--color-purple); }
+.resultFail { border: 1px solid var(--color-critical-red); }
+
+.resultLabelOk {
+  color: var(--color-purple);
+  line-height: 1.7;
+}
+.resultLabelFail { color: var(--color-critical-red); }
+
+.sig {
+  color: var(--color-pure-white);
+  margin-top: var(--spacing-sm);
+  word-break: break-all;
+}
+
+.footer {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-top: 1px solid var(--color-gray-dark);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-gray);
+}
+
+.sysId { color: var(--color-gray-light); }

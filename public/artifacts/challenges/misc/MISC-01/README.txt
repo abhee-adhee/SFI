@@ -8,4 +8,4 @@ Protocol Framing Format Specification:
 - Payload Length (2 bytes, Big-Endian unsigned short)
 - Payload Bytes (Variable length equal to Payload Length)
 
-Objective: Parse the binary stream according to the protocol specification to extract the payload data.
+Objective: Parse the binary stream according to the protocol specification to locate the Payload Data (Type 0x02) packet. Note that Payload Data bytes are masked with XOR 0x2A; XOR-decode the extracted payload to recover the signal token.

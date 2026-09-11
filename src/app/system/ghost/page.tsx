@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Navigation from '@/components/Navigation/Navigation';
-import styles from '@/app/shared.module.css';
+import styles from './ghost.module.css';
 
 export default function SystemGhostPage() {
   const [selectedRoute, setSelectedRoute] = useState<'RouteA' | 'RouteB' | 'RouteC'>('RouteA');
@@ -35,117 +35,96 @@ export default function SystemGhostPage() {
   return (
     <div className={styles.page}>
       <Navigation />
-      
+
       <main className={styles.main}>
+        <div className={styles.classified}>
+          <span>SYSTEM ANOMALY // CONTAINMENT ACTIVE // ATTRIBUTION UNRESOLVED</span>
+          <span>SIGNATURE: PERSISTENT</span>
+        </div>
+
         <div className={styles.headerRow}>
           <div>
-            <h1 className={styles.title}>GHOST DEEP INVESTIGATION CONSOLE</h1>
-            <p className={styles.subtitle}>FINAL REVELATION & CONVERGENCE ENGINE // BOSS-02</p>
+            <h1 className={styles.title}>GHOST</h1>
+            <p className={styles.subtitle}>SYSTEM-LEVEL ANOMALY INVESTIGATION</p>
           </div>
+          <span className={styles.statusChip}>● ACTIVE ANOMALY — UNATTRIBUTED</span>
         </div>
 
         <div className={styles.grid}>
           <div className={styles.panel}>
-            <h2>EVIDENCE CONVERGENCE ROUTES</h2>
-            <p>
-              GHOST is not an external attacker; it is an emergent organic sub-process that originated within Project ECHO in 2015 prior to AURELIA development.
+            <h2 className={styles.panelTitle}>ANOMALY BRIEF</h2>
+            <p className={styles.para}>
+              An anomalous sub-process — internally designated GHOST — persists within NEXUS system state
+              and has resisted attribution. It cannot be traced to any single subsystem, deployment, or
+              actor, and its origin remains unresolved.
             </p>
-            <div style={{ marginTop: '1rem', fontFamily: 'monospace', fontSize: '0.9rem' }}>
-              <p style={{ color: '#00ff66' }}>[Route A] OSINT + Forensics + Web:</p>
-              <p style={{ color: '#888', marginLeft: '1rem' }}>Origin Year (2015) + Vector (ECHO-SUB-01) + Beacon (GHOST-BEACON-09)</p>
-              
-              <p style={{ color: '#00ff66', marginTop: '0.75rem' }}>[Route B] Crypto + RE + Forensics:</p>
-              <p style={{ color: '#888', marginLeft: '1rem' }}>Prime Modulus + License (AURA-9921-ECHO-8842) + Beacon (GHOST-BEACON-09)</p>
-              
-              <p style={{ color: '#00ff66', marginTop: '0.75rem' }}>[Route C] Web + RE + Misc:</p>
-              <p style={{ color: '#888', marginLeft: '1rem' }}>Stream Magic (NXS\x01) + Container (REC-GHOST-99) + License (AURA-9921-ECHO-8842)</p>
+            <p className={styles.para}>
+              Resolving the anomaly requires correlating independent evidence recovered across the
+              investigation along a single convergence route. Correlation is computed offline with the
+              authorized correlation utility issued with your investigation package; this console verifies
+              the resulting convergence handshake only.
+            </p>
+
+            <div className={styles.route}>
+              <div className={styles.routeName}>ROUTE A — PROVENANCE CORRELATION</div>
+              <div className={styles.routeParams}>inputs: origin_year · echo_vector · ghost_beacon</div>
             </div>
-            <p style={{ marginTop: '1rem', color: '#ffb703', fontFamily: 'monospace' }}>
-              HANDSHAKE TOOL: /artifacts/challenges/bosses/BOSS-02/ghost_handshake
-            </p>
+            <div className={styles.route}>
+              <div className={styles.routeName}>ROUTE B — CRYPTOGRAPHIC LINEAGE</div>
+              <div className={styles.routeParams}>inputs: prime_modulus_p · lss_matrix · ghost_beacon</div>
+            </div>
+            <div className={styles.route}>
+              <div className={styles.routeName}>ROUTE C — SIGNAL / CONTAINER CORRELATION</div>
+              <div className={styles.routeParams}>inputs: stream_magic · nxc_classified · lss_matrix</div>
+            </div>
           </div>
 
           <div className={styles.panel}>
-            <h2>GHOST HANDSHAKE VERIFICATION</h2>
-            <form onSubmit={handleHandshake} style={{ marginTop: '1rem' }}>
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontFamily: 'monospace' }}>
-                  SELECT CONVERGENCE ROUTE:
-                </label>
-                <select
-                  value={selectedRoute}
-                  onChange={(e) => setSelectedRoute(e.target.value as 'RouteA' | 'RouteB' | 'RouteC')}
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    backgroundColor: '#111',
-                    border: '1px solid #333',
-                    color: '#00ff66',
-                    fontFamily: 'monospace'
-                  }}
-                >
-                  <option value="RouteA">Route A (OSINT + Forensics + Web)</option>
-                  <option value="RouteB">Route B (Crypto + RE + Forensics)</option>
-                  <option value="RouteC">Route C (Web + RE + Misc)</option>
-                </select>
-              </div>
-
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontFamily: 'monospace' }}>
-                  HANDSHAKE TOKEN (HEX):
-                </label>
-                <input
-                  type="text"
-                  value={tokenInput}
-                  onChange={(e) => setTokenInput(e.target.value)}
-                  placeholder="Enter generated route handshake token..."
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    backgroundColor: '#111',
-                    border: '1px solid #333',
-                    color: '#00ff66',
-                    fontFamily: 'monospace'
-                  }}
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={loading}
-                style={{
-                  padding: '0.75rem 1.5rem',
-                  backgroundColor: '#222',
-                  border: '1px solid #00ff66',
-                  color: '#00ff66',
-                  cursor: 'pointer',
-                  fontFamily: 'monospace'
-                }}
+            <h2 className={styles.panelTitle}>CONVERGENCE HANDSHAKE</h2>
+            <p className={styles.para}>
+              Select the route you correlated, then submit its convergence handshake to resolve the
+              anomaly.
+            </p>
+            <form onSubmit={handleHandshake}>
+              <label className={styles.inputLabel} htmlFor="routeSel">CONVERGENCE ROUTE</label>
+              <select
+                id="routeSel"
+                className={styles.select}
+                value={selectedRoute}
+                onChange={(e) => setSelectedRoute(e.target.value as 'RouteA' | 'RouteB' | 'RouteC')}
               >
-                {loading ? 'VERIFYING...' : 'EXECUTE GHOST HANDSHAKE'}
+                <option value="RouteA">Route A — Provenance Correlation</option>
+                <option value="RouteB">Route B — Cryptographic Lineage</option>
+                <option value="RouteC">Route C — Signal / Container Correlation</option>
+              </select>
+
+              <label className={styles.inputLabel} htmlFor="handshake">CONVERGENCE HANDSHAKE · HEX</label>
+              <input
+                id="handshake"
+                type="text"
+                className={styles.input}
+                value={tokenInput}
+                onChange={(e) => setTokenInput(e.target.value)}
+                placeholder="computed convergence handshake…"
+                autoComplete="off"
+                spellCheck={false}
+                required
+              />
+
+              <button type="submit" className={styles.button} disabled={loading}>
+                {loading ? 'CORRELATING…' : 'EXECUTE CONVERGENCE HANDSHAKE'}
               </button>
             </form>
 
             {result && (
-              <div
-                style={{
-                  marginTop: '1.5rem',
-                  padding: '1rem',
-                  border: result.success ? '1px solid #00ff66' : '1px solid #ff4444',
-                  backgroundColor: '#0a0a0a',
-                  fontFamily: 'monospace'
-                }}
-              >
+              <div className={result.success ? `${styles.resultBox} ${styles.resultOk}` : `${styles.resultBox} ${styles.resultFail}`}>
                 {result.success ? (
                   <div>
-                    <p style={{ color: '#00ff66' }}>[FINAL REVELATION] {result.message}</p>
-                    <p style={{ color: '#ffb703', marginTop: '0.75rem', fontWeight: 'bold' }}>
-                      FINAL CTF FLAG: {result.flag}
-                    </p>
+                    <p className={styles.resultLabelOk}>[ANOMALY RESOLVED] {result.message}</p>
+                    <p className={styles.sig}>RESOLUTION SIGNATURE: {result.flag}</p>
                   </div>
                 ) : (
-                  <p style={{ color: '#ff4444' }}>[FAILED] {result.error}</p>
+                  <p className={styles.resultLabelFail}>[UNRESOLVED] {result.error}</p>
                 )}
               </div>
             )}
@@ -155,7 +134,7 @@ export default function SystemGhostPage() {
 
       <footer className={styles.footer}>
         <p>&copy; {new Date().getFullYear()} NEXUS DYNAMICS. ALL RIGHTS RESERVED.</p>
-        <p className={styles.sysId}>SYS.ID: BOSS-02-GHOST-FINAL</p>
+        <p className={styles.sysId}>SYS.ID: SYS-GHOST</p>
       </footer>
     </div>
   );

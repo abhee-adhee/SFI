@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation/Navigation';
+import Footer from '@/components/Footer/Footer';
 import styles from '../../shared.module.css';
 import publications from '@/data/publications.json';
 import Link from 'next/link';
@@ -27,10 +28,7 @@ export default function PublicationsPage() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} NEXUS DYNAMICS. ALL RIGHTS RESERVED.</p>
-        <p>SYS.ID: ND-PUB-LIST</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

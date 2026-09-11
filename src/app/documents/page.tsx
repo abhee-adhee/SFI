@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation/Navigation';
+import Footer from '@/components/Footer/Footer';
 import styles from '../shared.module.css';
 import documents from '@/data/documents.json';
 import Link from 'next/link';
@@ -25,12 +26,19 @@ export default function DocumentsPage() {
             </Link>
           ))}
         </div>
+
+        <div style={{ marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid var(--color-gray-dark)' }}>
+          <p style={{ color: 'var(--color-gray-light)', fontSize: '0.875rem', marginBottom: '1rem', maxWidth: '760px' }}>
+            Only declassified, publicly releasable records are listed above. Older material is held in the
+            legacy archive system, which is periodically taken offline for maintenance.
+          </p>
+          <Link href="/archive" className={styles.restrictedLink}>
+            <span className={styles.restrictedLock}>◈</span> Legacy Archive (pre-2024) · OFFLINE
+          </Link>
+        </div>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} NEXUS DYNAMICS. ALL RIGHTS RESERVED.</p>
-        <p>SYS.ID: ND-DOC-PUB</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

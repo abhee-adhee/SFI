@@ -11,8 +11,15 @@ misc1_dir = os.path.join(base_dir, "MISC-01")
 os.makedirs(misc1_dir, exist_ok=True)
 
 flag1 = b'flag{Signal_Packet_Framing_Decoded}'
+# The Payload Data (Type 0x02) is masked with a single-byte XOR so the signal token
+# is NOT recoverable with `strings`. The mask is documented in README.txt, so the
+# intended solve is unchanged from the player's perspective: parse the NXS framing to
+# locate the Type 0x02 packet, then XOR-decode its payload. This mirrors the payload
+# masking already used by MISC-02 (XOR 0x77) and MISC-03 (XOR 0x44).
+PAYLOAD_XOR_MASK = 0x2A
+flag1_masked = bytes([b ^ PAYLOAD_XOR_MASK for b in flag1])
 pkt1 = b'NXS\x01' + struct.pack('>BH', 1, 12) + b'AURELIA_LINK'
-pkt2 = b'NXS\x01' + struct.pack('>BH', 2, len(flag1)) + flag1
+pkt2 = b'NXS\x01' + struct.pack('>BH', 2, len(flag1_masked)) + flag1_masked
 pkt3 = b'NXS\x01' + struct.pack('>BH', 3, 4) + b'END\x00'
 
 with open(os.path.join(misc1_dir, 'signal_stream.bin'), 'wb') as f:
@@ -28,7 +35,7 @@ Protocol Framing Format Specification:
 - Payload Length (2 bytes, Big-Endian unsigned short)
 - Payload Bytes (Variable length equal to Payload Length)
 
-Objective: Parse the binary stream according to the protocol specification to extract the payload data.
+Objective: Parse the binary stream according to the protocol specification to locate the Payload Data (Type 0x02) packet. Note that Payload Data bytes are masked with XOR 0x2A; XOR-decode the extracted payload to recover the signal token.
 """
 with open(os.path.join(misc1_dir, 'README.txt'), 'w') as f:
     f.write(readme1)

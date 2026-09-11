@@ -4,48 +4,63 @@
     "name": "AURELIA Core",
     "status": "ACTIVE",
     "leadId": "EMP-001",
-    "repoId": "REPO-AURELIA-CORE"
+    "repoId": "REPO-AURELIA-CORE",
+    "description": "The active AURELIA cognitive engine: a distributed, self-healing platform for enterprise-scale infrastructure management."
   },
   {
     "id": "PRJ-COGNITION",
     "name": "Recursive Cognition",
     "status": "ACTIVE",
     "leadId": "EMP-001",
-    "repoId": "REPO-COG-MODELS"
+    "repoId": "REPO-COG-MODELS",
+    "description": "Research into bounded recursive cognition — the modeling techniques that underpin AURELIA's constrained learning loops."
   },
   {
     "id": "PRJ-INFRA-NET",
     "name": "Global Nexus Grid",
     "status": "ACTIVE",
     "leadId": "EMP-002",
-    "repoId": "REPO-INFRA"
+    "repoId": "REPO-INFRA",
+    "description": "The routing and datacenter fabric that AURELIA is deployed across, spanning 42 global datacenters."
   },
   {
     "id": "PRJ-MEM-ALLOC",
     "name": "Dynamic Memory Allocator",
     "status": "ACTIVE",
     "leadId": "EMP-003",
-    "repoId": "REPO-MEM"
+    "repoId": "REPO-MEM",
+    "description": "Memory management and allocation subsystems for AURELIA Core, including allocation diagnostics and anomaly instrumentation."
   },
   {
     "id": "PRJ-ZERO-TRUST",
     "name": "Zero-Trust Protocol",
     "status": "ACTIVE",
     "leadId": "EMP-004",
-    "repoId": "REPO-SEC-PROTO"
+    "repoId": "REPO-SEC-PROTO",
+    "description": "Company-wide zero-trust boundary protocol enforcing authentication on every inter-node process, even those spawned by AURELIA."
   },
   {
     "id": "PRJ-ECHO",
     "name": "Project ECHO",
     "status": "ARCHIVED",
     "leadId": "EMP-005",
-    "repoId": "REPO-ECHO"
+    "repoId": "REPO-ECHO",
+    "description": "Suspended theoretical-research program into cognitive resonance in unbounded systems. Assets moved to cold storage in 2018."
   },
   {
     "id": "PRJ-ARCHIVE",
     "name": "System Archives",
     "status": "MAINTENANCE",
     "leadId": "EMP-007",
-    "repoId": "REPO-ARCHIVE"
+    "repoId": "REPO-ARCHIVE",
+    "description": "Retention and cold-storage program for decommissioned subsystems and legacy repositories."
+  },
+  {
+    "id": "PRJ-AURELIA-ALPHA",
+    "name": "AURELIA Alpha Line",
+    "status": "ARCHIVED",
+    "leadId": "EMP-005",
+    "repoId": "REPO-ECHO",
+    "description": "Sealed precursor line to AURELIA, developed under Advanced Research prior to the current architecture. Records are retained for lineage continuity only."
   }
 ]

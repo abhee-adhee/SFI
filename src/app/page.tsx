@@ -1,4 +1,5 @@
 import Navigation from '@/components/Navigation/Navigation';
+import Footer from '@/components/Footer/Footer';
 import styles from './page.module.css';
 import Link from 'next/link';
 
@@ -29,29 +30,34 @@ export default function Home() {
         </section>
 
         <section className={styles.gridSection}>
-          <div className={styles.gridItem}>
+          <Link href="/research" className={styles.gridItem}>
             <h3>RESEARCH</h3>
             <p>Pioneering computational cognitive architectures.</p>
-          </div>
-          <div className={styles.gridItem}>
+          </Link>
+          <Link href="/aurelia" className={styles.gridItem}>
             <h3>SYSTEMS</h3>
             <p>Intelligent infrastructure for global operations.</p>
-          </div>
-          <div className={styles.gridItem}>
+          </Link>
+          <Link href="/security" className={styles.gridItem}>
             <h3>SECURITY</h3>
             <p>Next-generation zero-trust AI environments.</p>
-          </div>
-          <div className={styles.gridItem}>
+          </Link>
+          <Link href="/careers" className={styles.gridItem}>
             <h3>CAREERS</h3>
             <p>Build the future of autonomous intelligence.</p>
-          </div>
+          </Link>
+          <Link href="/developers" className={styles.gridItem}>
+            <h3>DEVELOPERS</h3>
+            <p>Public platform APIs and integration reference.</p>
+          </Link>
+          <Link href="/status" className={styles.gridItem}>
+            <h3>STATUS</h3>
+            <p>Real-time platform health and incident history.</p>
+          </Link>
         </section>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} NEXUS DYNAMICS. ALL RIGHTS RESERVED.</p>
-        <p className={styles.sysId}>SYS.ID: ND-001</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 import Navigation from '@/components/Navigation/Navigation';
-import styles from '@/app/shared.module.css';
+import styles from './core.module.css';
 
 export default function AureliaCorePage() {
   const [tokenInput, setTokenInput] = useState('');
@@ -31,100 +32,110 @@ export default function AureliaCorePage() {
   return (
     <div className={styles.page}>
       <Navigation />
-      
+
       <main className={styles.main}>
+        <div className={styles.classified}>
+          <span>RESTRICTED // AUTHORIZED CORE ENGINEERING ACCESS ONLY</span>
+          <span>INTEGRITY STATE: UNVERIFIED</span>
+        </div>
+
         <div className={styles.headerRow}>
           <div>
-            <h1 className={styles.title}>AURELIA RESTRICTED CORE</h1>
-            <p className={styles.subtitle}>DIAGNOSTIC & STATE VERIFICATION CONSOLE // BOSS-01</p>
+            <h1 className={styles.title}>AURELIA CORE</h1>
+            <p className={styles.subtitle}>DIAGNOSTIC STATE RECONSTRUCTION</p>
           </div>
+          <span className={styles.statusChip}>◇ CORE LOCKED — RECONSTRUCTION REQUIRED</span>
         </div>
 
         <div className={styles.grid}>
           <div className={styles.panel}>
-            <h2>DIAGNOSTIC OVERVIEW</h2>
-            <p>
-              Deepest accessible diagnostic subsystem for AURELIA core services.
+            <h2 className={styles.panelTitle}>CORE MODULE LINEAGE</h2>
+            <p className={styles.para}>
+              The active core substrate is a direct descendant of the legacy platform it superseded.
+              Every AURELIA core revision inherits state semantics from the ECHO subsystem it was built
+              on; the current substrate cannot be diagnosed in isolation from that lineage.
             </p>
-            <p style={{ fontFamily: 'monospace', color: '#ffb703' }}>
-              COMPONENT: AURELIA-CORE-V4<br />
-              INCIDENT TIMESTAMP: 2025-10-14T08:00:00Z<br />
-              ARTIFACT: /artifacts/challenges/bosses/BOSS-01/core_diagnostic
-            </p>
-            <p>
-              Reconstruct the 32-byte hex state token from the diagnostic binary using the incident timestamp and target core module ID.
+            <div className={styles.lineage}>
+              <div className={`${styles.lineageRow} ${styles.lineageCurrent}`}>
+                <span className={styles.lineageId}>AURELIA-CORE-V4</span>
+                <span className={styles.lineageNote}>active substrate</span>
+              </div>
+              <div className={styles.lineageRow}>
+                <span className={styles.lineageId}>AURELIA-CORE-V3</span>
+                <span className={styles.lineageNote}>superseded</span>
+              </div>
+              <div className={styles.lineageRow}>
+                <span className={styles.lineageId}>AURELIA-CORE-V1 · V2</span>
+                <span className={styles.lineageNote}>early integration</span>
+              </div>
+              <div className={styles.lineageRow}>
+                <span className={styles.lineageId}>ECHO-AURELIA-BRIDGE</span>
+                <span className={styles.lineageNote}>legacy handoff · deprecated</span>
+              </div>
+              <div className={styles.lineageRow}>
+                <span className={styles.lineageId}>ECHO-CORE</span>
+                <span className={styles.lineageNote}>origin substrate · legacy</span>
+              </div>
+            </div>
+            <p className={styles.para}>
+              Diagnostic state reconstruction is scoped to the core-integrity incident on record.
+              Reconstruction is performed offline with the authorized core diagnostic utility issued
+              with your investigation package; this console verifies the resulting state token only.
             </p>
           </div>
 
           <div className={styles.panel}>
-            <h2>STATE TOKEN VERIFICATION</h2>
-            <form onSubmit={handleVerify} style={{ marginTop: '1rem' }}>
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontFamily: 'monospace' }}>
-                  STATE TOKEN (32-BYTE SHA256 HEX):
-                </label>
-                <input
-                  type="text"
-                  value={tokenInput}
-                  onChange={(e) => setTokenInput(e.target.value)}
-                  placeholder="Enter calculated hex token..."
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    backgroundColor: '#111',
-                    border: '1px solid #333',
-                    color: '#00ff66',
-                    fontFamily: 'monospace'
-                  }}
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={loading}
-                style={{
-                  padding: '0.75rem 1.5rem',
-                  backgroundColor: '#222',
-                  border: '1px solid #00ff66',
-                  color: '#00ff66',
-                  cursor: 'pointer',
-                  fontFamily: 'monospace'
-                }}
-              >
-                {loading ? 'VERIFYING...' : 'VERIFY CORE STATE'}
+            <h2 className={styles.panelTitle}>STATE TOKEN VERIFICATION</h2>
+            <p className={styles.para}>
+              Submit the reconstructed core state token to confirm the core&apos;s diagnostic state for
+              the incident under review.
+            </p>
+            <form onSubmit={handleVerify}>
+              <label className={styles.inputLabel} htmlFor="stateToken">
+                RECONSTRUCTED STATE TOKEN · 32-BYTE SHA-256 HEX
+              </label>
+              <input
+                id="stateToken"
+                type="text"
+                className={styles.input}
+                value={tokenInput}
+                onChange={(e) => setTokenInput(e.target.value)}
+                placeholder="reconstructed hex token…"
+                autoComplete="off"
+                spellCheck={false}
+                required
+              />
+              <button type="submit" className={styles.button} disabled={loading}>
+                {loading ? 'VERIFYING…' : 'VERIFY CORE STATE'}
               </button>
             </form>
 
             {result && (
-              <div
-                style={{
-                  marginTop: '1.5rem',
-                  padding: '1rem',
-                  border: result.success ? '1px solid #00ff66' : '1px solid #ff4444',
-                  backgroundColor: '#0a0a0a',
-                  fontFamily: 'monospace'
-                }}
-              >
+              <div className={result.success ? `${styles.resultBox} ${styles.resultOk}` : `${styles.resultBox} ${styles.resultFail}`}>
                 {result.success ? (
                   <div>
-                    <p style={{ color: '#00ff66' }}>[AUTHENTICATED] {result.message}</p>
-                    <p style={{ color: '#ffb703', marginTop: '0.5rem', fontWeight: 'bold' }}>
-                      FLAG: {result.flag}
-                    </p>
+                    <p className={styles.resultLabelOk}>[AUTHENTICATED] {result.message}</p>
+                    <p className={styles.sig}>VERIFICATION SIGNATURE: {result.flag}</p>
                   </div>
                 ) : (
-                  <p style={{ color: '#ff4444' }}>[FAILED] {result.error}</p>
+                  <p className={styles.resultLabelFail}>[REJECTED] {result.error}</p>
                 )}
               </div>
             )}
           </div>
         </div>
+
+        <div className={styles.referral}>
+          RESIDUAL DIAGNOSTIC NOTE — one sub-process signature observed within core state could not be
+          reconciled to any known AURELIA or ECHO module. It exceeds core diagnostic scope and has been
+          referred for{' '}
+          <Link href="/system/ghost" className={styles.referralLink}>system-level anomaly investigation</Link>.
+        </div>
       </main>
 
       <footer className={styles.footer}>
         <p>&copy; {new Date().getFullYear()} NEXUS DYNAMICS. ALL RIGHTS RESERVED.</p>
-        <p className={styles.sysId}>SYS.ID: BOSS-01-AURELIA-CORE</p>
+        <p className={styles.sysId}>SYS.ID: AU-CORE-DIAG</p>
       </footer>
     </div>
   );
